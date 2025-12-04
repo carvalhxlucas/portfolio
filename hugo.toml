@@ -1,0 +1,50 @@
+baseURL = 'https://carvalhxlucas.pro/' # Coloque seu domínio aqui
+languageCode = 'pt-br'
+title = 'carvalhxlucas'
+theme = "PaperMod"
+
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+[params]
+  defaultTheme = "auto" # Respeita a preferência do sistema (Dark/Light)
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  
+  # Configuração da Home (Estilo Cartão de Visita)
+  [params.profileMode]
+    enabled = true
+    title = "Lucas Carvalho"
+    subtitle = "AI/ML Engineer"
+    imageUrl = "https://github.com/carvalhxlucas.png"
+    imageWidth = 120
+    imageHeight = 120
+    
+    [[params.profileMode.buttons]]
+      name = "Meus Projetos"
+      url = "/posts"
+    
+    [[params.profileMode.buttons]]
+      name = "GitHub"
+      url = "https://github.com/carvalhxlucas"
+
+    [[params.profileMode.buttons]]
+      name = "LinkedIn"
+      url = "https://linkedin.com/in/carvalhxlucas"
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "Projetos"
+    url = "/posts"
+    weight = 10
+  [[menu.main]]
+    identifier = "sobre"
+    name = "Sobre"
+    url = "/sobre"
+    weight = 20
