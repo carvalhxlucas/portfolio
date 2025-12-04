@@ -1,50 +1,85 @@
-baseURL = 'https://carvalhxlucas.pro/' # Coloque seu domínio aqui
-languageCode = 'pt-br'
-title = 'carvalhxlucas'
+baseURL = 'https://carvalhxlucas.pro/'
 theme = "PaperMod"
+defaultContentLanguage = 'en' # Default language
 
 enableRobotsTXT = true
 buildDrafts = false
 buildFuture = false
 buildExpired = false
 
+# --- Global settings ---
 [params]
-  defaultTheme = "auto" # Respeita a preferência do sistema (Dark/Light)
+  defaultTheme = "auto"
   ShowReadingTime = true
   ShowShareButtons = true
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
   
-  # Configuração da Home (Estilo Cartão de Visita)
-  [params.profileMode]
+  # Social Icons
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/carvalhxlucas"
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://linkedin.com/in/carvalhxlucas"
+
+# --- Settings: Portuguese (pt-br) ---
+[languages.pt-br]
+  languageName = "Português"
+  weight = 1
+  title = "Lucas Carvalho"
+  
+  # Portuguese bio
+  [languages.pt-br.params.profileMode]
     enabled = true
     title = "Lucas Carvalho"
     subtitle = "AI/ML Engineer"
     imageUrl = "https://github.com/carvalhxlucas.png"
     imageWidth = 120
     imageHeight = 120
-    
-    [[params.profileMode.buttons]]
+    [[languages.pt-br.params.profileMode.buttons]]
       name = "Meus Projetos"
       url = "/posts"
-    
-    [[params.profileMode.buttons]]
-      name = "GitHub"
-      url = "https://github.com/carvalhxlucas"
 
-    [[params.profileMode.buttons]]
-      name = "LinkedIn"
-      url = "https://linkedin.com/in/carvalhxlucas"
-
-[menu]
-  [[menu.main]]
+  # Portuguese menu
+  [[languages.pt-br.menu.main]]
     identifier = "posts"
     name = "Projetos"
     url = "/posts"
     weight = 10
-  [[menu.main]]
+  [[languages.pt-br.menu.main]]
     identifier = "sobre"
     name = "Sobre"
     url = "/sobre"
+    weight = 20
+
+# --- Settings: English (en) ---
+[languages.en]
+  languageName = "English"
+  weight = 2
+  title = "Lucas Carvalho"
+
+  # English bio
+  [languages.en.params.profileMode]
+    enabled = true
+    title = "Lucas Carvalho"
+    subtitle = "AI/ML Engineer"
+    imageUrl = "https://github.com/carvalhxlucas.png"
+    imageWidth = 120
+    imageHeight = 120
+    [[languages.en.params.profileMode.buttons]]
+      name = "My Projects"
+      url = "/posts"
+
+  # English menu
+  [[languages.en.menu.main]]
+    identifier = "posts"
+    name = "Projects"
+    url = "/posts"
+    weight = 10
+  [[languages.en.menu.main]]
+    identifier = "sobre"
+    name = "About"
+    url = "/about" # Note que a URL muda
     weight = 20
