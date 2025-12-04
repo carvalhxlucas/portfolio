@@ -26,14 +26,14 @@ jobs:
       - name: Checkout do código
         uses: actions/checkout@v4
         with:
-          submodules: recursive # Importante para o tema PaperMod
+          submodules: recursive # Baixa o tema PaperMod corretamente
           fetch-depth: 0
 
       - name: Instalar Hugo Extended
-        uses: actions/setup-hugo@v2
+        uses: peaceiris/actions-hugo@v3  # <--- ESSA É A CORREÇÃO
         with:
-          hugo-version: '0.128.0' # Versão que você estava usando
-          extended: true          # OBRIGATÓRIO para PaperMod
+          hugo-version: 'latest' # Pega a versão mais nova automaticamente
+          extended: true         # Ativa o suporte a SASS/SCSS (Obrigatório)
 
       - name: Build do Site
         run: hugo --minify --baseURL "https://carvalhxlucas.pro/"
