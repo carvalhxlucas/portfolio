@@ -74,6 +74,11 @@ buildExpired = false
 
   # English menu
   [[languages.en.menu.main]]
+    identifier = "certifications"
+    name = "Certifications"
+    url = "/certifications"
+    weight = 10
+  [[languages.en.menu.main]]
     identifier = "posts"
     name = "Projects"
     url = "/posts"
