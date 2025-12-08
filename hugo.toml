@@ -41,6 +41,9 @@ buildExpired = false
     [[languages.pt-br.params.profileMode.buttons]]
       name = "Meus Projetos"
       url = "/posts"
+    [[languages.pt-br.params.profileMode.buttons]]
+      name = "Sobre mim"
+      url = "/sobre"
 
   # Portuguese menu
   [[languages.pt-br.menu.main]]
@@ -48,6 +51,11 @@ buildExpired = false
     name = "Projetos"
     url = "/posts"
     weight = 10
+  [[languages.pt-br.menu.main]]
+    identifier = "certifications"
+    name = "Certificações"
+    url = "/certifications"
+    weight = 15
   [[languages.pt-br.menu.main]]
     identifier = "sobre"
     name = "Sobre"
@@ -71,6 +79,9 @@ buildExpired = false
     [[languages.en.params.profileMode.buttons]]
       name = "My Projects"
       url = "/posts"
+    [[languages.en.params.profileMode.buttons]]
+      name = "About me"
+      url = "/about"
 
   # English menu
   [[languages.en.menu.main]]
