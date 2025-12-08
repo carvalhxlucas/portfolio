@@ -64,7 +64,7 @@ buildExpired = false
   [languages.en.params.profileMode]
     enabled = true
     title = "Lucas Carvalho"
-    subtitle = "AI/ML Engineer"
+    subtitle = "Software Engineer"
     imageUrl = "https://github.com/carvalhxlucas.png"
     imageWidth = 120
     imageHeight = 120
