@@ -3,7 +3,7 @@ title: "AI Code Challenge Generator"
 date: 2023-12-09T20:30:00-03:00
 draft: false 
 tags: ["Python", "LangChain", "OpenAI", "Streamlit", "AI Engineering"]
-author: "Your Name"
+author: "Lucas Carvalho"
 summary: "An AI Engineering tool that generates structured technical interview challenges with hidden test cases validated via Pydantic."
 ---
 
