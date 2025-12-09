@@ -6,9 +6,15 @@ draft: false
 
 ## About Me
 
-Hello! I'm Lucas Carvalho, a software engineer specialized in Artificial Intelligence and Machine Learning. My passion is creating innovative solutions that combine cutting-edge technology with real-world impact.
+Hi, I'm Lucas. I build robust and scalable Software Solutions.
 
-I work with intelligent systems development, from conception to implementation, always seeking best practices and the most suitable technologies for each challenge.
+Building on a foundation of over 7 years in Support/Infrastructure, I transitioned to Software Engineering with a clear mission: to close the gap between code and production.
+
+What makes me different? I don't just understand the syntax; I understand the ecosystem. My hybrid background allows me to write code that is performant, secure, and ready to scale on AWS.
+
+Currently, I am applying this mindset to AI Engineering, building production-grade RAG systems and autonomous agents.
+
+My Philosophy: A model or feature is only valuable if it can be deployed reliably. I bridge the gap between Development and Operations, ensuring that what we build actually works in the real world.
 
 ## Experience
 
