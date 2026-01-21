@@ -21,6 +21,7 @@ Currently focused on cloud infrastructure and distributed systems to solve real-
 
 **Main responsibilities:**
 - **Generative AI Implementation:** Spearheading the development of an intelligent patient support assistant using RAG. Leveraging LLMs and Vector Databases to automate responses and enhance the efficiency of the administrative team.
+- **AI Adoption & Developer Experience:** Pioneered the adoption of AI-assisted coding tools (Cursor/LLMs) within the team, enhancing coding velocity and operational efficiency.
 - **Full Stack Development:** Building and maintaining scalable web applications using Node.js and Angular, ensuring high performance and responsive UI for healthcare management systems.
 - **AI Integration:** Engineering robust APIs to seamlessly bridge Large Language Models (LLMs) with existing proprietary data and workflows.
 - **DevOps:** Streamlining deployment processes using Docker and CI/CD pipelines, ensuring reliability from development to production environments.
@@ -31,7 +32,6 @@ Currently focused on cloud infrastructure and distributed systems to solve real-
 **Location:** São José, Santa Catarina, Brazil · Hybrid
 
 **Main responsibilities:**
-- **AI Adoption & Developer Experience:** Pioneered the adoption of AI-assisted coding tools (Cursor/LLMs) within the team, enhancing coding velocity and operational efficiency.
 - **Cloud Migration (AWS):** Executed the migration of client environments from legacy on-premise servers to AWS Cloud, ensuring data integrity and minimal downtime.
 - **Observability & SRE:** Monitored application health and performance using Datadog. Actively participated in Incident Management, collaborating with engineering teams to troubleshoot and resolve critical availability issues.
 - **Internal Tools & Automation:** Developed internal software solutions to automate daily operations and optimized workflows.

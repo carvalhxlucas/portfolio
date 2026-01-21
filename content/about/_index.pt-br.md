@@ -21,6 +21,7 @@ Atualmente, estou focado em infraestrutura em nuvem e sistemas distribuídos par
 
 **Principais responsabilidades:**
 - **Implementação de IA Generativa:** Liderando o desenvolvimento de um assistente inteligente de suporte ao paciente usando RAG. Utilizando LLMs e Vector Databases para automatizar respostas e aumentar a eficiência da equipe administrativa.
+- **Adoção de IA e Developer Experience:** Pioneiro na adoção de ferramentas de codificação assistida por IA (Cursor/LLMs) dentro da equipe, aumentando a velocidade de codificação e eficiência operacional.
 - **Desenvolvimento Full Stack:** Construindo e mantendo aplicações web escaláveis usando Node.js e Angular, garantindo alta performance e UI responsiva para sistemas de gestão de saúde.
 - **Integração de IA:** Desenvolvendo APIs robustas para integrar perfeitamente Large Language Models (LLMs) com dados proprietários e fluxos de trabalho existentes.
 - **DevOps:** Otimizando processos de deploy usando Docker e pipelines CI/CD, garantindo confiabilidade desde o desenvolvimento até ambientes de produção.
@@ -31,7 +32,6 @@ Atualmente, estou focado em infraestrutura em nuvem e sistemas distribuídos par
 **Localização:** São José, Santa Catarina, Brasil · Híbrido
 
 **Principais responsabilidades:**
-- **Adoção de IA e Developer Experience:** Pioneiro na adoção de ferramentas de codificação assistida por IA (Cursor/LLMs) dentro da equipe, aumentando a velocidade de codificação e eficiência operacional.
 - **Migração para Cloud (AWS):** Executei a migração de ambientes de clientes de servidores on-premise legados para AWS Cloud, garantindo integridade de dados e tempo de inatividade mínimo.
 - **Observabilidade e SRE:** Monitorei a saúde e performance de aplicações usando Datadog. Participei ativamente do Gerenciamento de Incidentes, colaborando com equipes de engenharia para diagnosticar e resolver problemas críticos de disponibilidade.
 - **Ferramentas Internas e Automação:** Desenvolvi soluções de software internas para automatizar operações diárias e otimizar fluxos de trabalho.
