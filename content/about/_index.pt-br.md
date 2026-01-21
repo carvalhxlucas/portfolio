@@ -6,9 +6,11 @@ draft: false
 
 ## Sobre Mim
 
-Olá! Sou Lucas Carvalho, um engenheiro de software especializado em Inteligência Artificial e Machine Learning. Minha paixão é criar soluções inovadoras que combinam tecnologia de ponta com impacto real no mundo.
+Sou um Engenheiro de Software dedicado a construir soluções robustas, escaláveis e cloud-native.
 
-Trabalho com desenvolvimento de sistemas inteligentes, desde a concepção até a implementação, sempre buscando as melhores práticas e tecnologias mais adequadas para cada desafio.
+Meu foco vai além de escrever código; desenho sistemas que são seguros, eficientes e fáceis de manter. Especializo-me em conectar lógica de backend complexa a experiências de usuário intuitivas, sempre priorizando integridade arquitetural e performance de longo prazo.
+
+Atualmente, estou focado em infraestrutura em nuvem e sistemas distribuídos para resolver desafios de engenharia do mundo real.
 
 ## Experiências
 

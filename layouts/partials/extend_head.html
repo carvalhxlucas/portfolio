@@ -22,3 +22,15 @@
 {{- end }}
 {{- end -}}
 
+{{- if eq .Section "articles" -}}
+{{- $projectsCSS := resources.Get "css/projects.css" }}
+{{- if $projectsCSS }}
+{{- if not site.Params.assets.disableFingerprinting }}
+{{- $projectsCSS := $projectsCSS | fingerprint }}
+<link rel="stylesheet" href="{{ $projectsCSS.RelPermalink }}" integrity="{{ $projectsCSS.Data.Integrity }}">
+{{- else }}
+<link rel="stylesheet" href="{{ $projectsCSS.RelPermalink }}">
+{{- end }}
+{{- end }}
+{{- end -}}
+

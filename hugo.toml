@@ -52,6 +52,11 @@ buildExpired = false
     url = "/posts"
     weight = 10
   [[languages.pt-br.menu.main]]
+    identifier = "articles"
+    name = "Artigos"
+    url = "/articles"
+    weight = 12
+  [[languages.pt-br.menu.main]]
     identifier = "certifications"
     name = "Certificações"
     url = "/certifications"
@@ -94,6 +99,11 @@ buildExpired = false
     name = "Projects"
     url = "/posts"
     weight = 10
+  [[languages.en.menu.main]]
+    identifier = "articles"
+    name = "Articles"
+    url = "/articles"
+    weight = 12
   [[languages.en.menu.main]]
     identifier = "sobre"
     name = "About"

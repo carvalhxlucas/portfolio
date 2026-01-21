@@ -6,15 +6,11 @@ draft: false
 
 ## About Me
 
-Hi, I'm Lucas. I build robust and scalable Software Solutions.
+I am a Software Engineer dedicated to building robust, scalable, and cloud-native solutions.
 
-Building on a foundation of over 7 years in Support/Infrastructure, I transitioned to Software Engineering with a clear mission: to close the gap between code and production.
+My focus goes beyond writing code; I design systems that are secure, efficient, and easy to maintain. I specialize in bridging the gap between complex backend logic and intuitive user experiences, always prioritizing architectural integrity and long-term performance.
 
-What makes me different? I don't just understand the syntax; I understand the ecosystem. My hybrid background allows me to write code that is performant, secure, and ready to scale on AWS.
-
-Currently, I am applying this mindset to AI Engineering, building production-grade RAG systems and autonomous agents.
-
-My Philosophy: A model or feature is only valuable if it can be deployed reliably. I bridge the gap between Development and Operations, ensuring that what we build actually works in the real world.
+Currently focused on cloud infrastructure and distributed systems to solve real-world engineering challenges.
 
 ## Experience
 
