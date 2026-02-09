@@ -2,15 +2,14 @@
 title: "Sobre"
 date: 2024-01-01T00:00:00-03:00
 draft: false
+slug: "sobre"
 ---
 
 ## Sobre Mim
 
-Sou um Engenheiro de Software dedicado a construir soluções robustas, escaláveis e cloud-native.
+Sou um Engenheiro de Software com foco na interseção entre Arquitetura em Nuvem e IA Generativa.
 
-Meu foco vai além de escrever código; desenho sistemas que são seguros, eficientes e fáceis de manter. Especializo-me em conectar lógica de backend complexa a experiências de usuário intuitivas, sempre priorizando integridade arquitetural e performance de longo prazo.
-
-Atualmente, estou focado em infraestrutura em nuvem e sistemas distribuídos para resolver desafios de engenharia do mundo real.
+Além de escrever código, projeto sistemas inteligentes para resolver problemas complexos do mundo real. Atualmente, meu foco está em construir soluções escaláveis de RAG (Retrieval-Augmented Generation) e APIs de alta performance utilizando Python, Node.js e AWS. Conecto engenharia de software robusta às capacidades da IA moderna, garantindo que a lógica de backend se traduza em experiências fluidas, eficientes e centradas no usuário.
 
 ## Experiência
 

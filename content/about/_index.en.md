@@ -6,11 +6,9 @@ draft: false
 
 ## About Me
 
-I am a Software Engineer dedicated to building robust, scalable, and cloud-native solutions.
+I am a Software Engineer specializing in the intersection of Cloud Architecture and Generative AI.
 
-My focus goes beyond writing code; I design systems that are secure, efficient, and easy to maintain. I specialize in bridging the gap between complex backend logic and intuitive user experiences, always prioritizing architectural integrity and long-term performance.
-
-Currently focused on cloud infrastructure and distributed systems to solve real-world engineering challenges.
+Beyond just writing code, I architect intelligent systems designed to solve complex real-world problems. Currently, my focus is on building scalable RAG (Retrieval-Augmented Generation) solutions and high-performance APIs utilizing Python, Node.js, and AWS. I bridge the gap between robust software engineering and modern AI capabilities, ensuring that backend logic translates into seamless, efficient, and user-centric experiences.
 
 ## Experience
 
