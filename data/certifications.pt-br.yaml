@@ -1,10 +1,4 @@
 certifications:
-  - name: "AWS Certified Cloud Practitioner"
-    issuer: "Amazon Web Services"
-    date: "2024-12-27"
-    badgeUrl: "https://images.credly.com/images/0e284c3f-5164-4b21-8660-0d847de41bac/image.png"
-    credentialUrl: "https://www.credly.com/badges/example"
-    description: "Certificação em AWS Cloud Practitioner Foundational"
   - name: "Machine Learning with Python"
     issuer: "IBM"
     date: "2025-02-25"
