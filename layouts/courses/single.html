@@ -1,0 +1,60 @@
+{{- define "main" }}
+
+<article class="post-single">
+  <header class="post-header">
+    {{ partial "breadcrumbs.html" . }}
+    <h1 class="post-title entry-hint-parent">
+      {{ .Title }}
+    </h1>
+  </header>
+
+  <div class="post-content">
+    <div class="courses-container">
+      {{ $lang := .Language.Lang }}
+      {{ $coursesFile := printf "courses.%s" $lang }}
+      {{ $courses := index site.Data $coursesFile }}
+
+      {{ if $courses }}
+        <div class="courses-grid">
+          {{ range $courses.courses }}
+          <div class="course-card">
+            <div class="course-badge">
+              {{ if .badgeUrl }}
+              <img src="{{ .badgeUrl }}" alt="{{ .name }} badge" loading="lazy">
+              {{ end }}
+            </div>
+            <div class="course-content">
+              <h3 class="course-name">{{ .name }}</h3>
+              <p class="course-issuer">{{ .issuer }}</p>
+              <p class="course-date">
+                {{ if eq $lang "pt-br" }}
+                  {{ time.Format "janeiro de 2006" (time .date) }}
+                {{ else }}
+                  {{ time.Format "January 2006" (time .date) }}
+                {{ end }}
+              </p>
+              {{ if .description }}
+              <p class="course-description">{{ .description }}</p>
+              {{ end }}
+              {{ if .credentialUrl }}
+              <a href="{{ .credentialUrl }}" target="_blank" rel="noopener noreferrer" class="course-link">
+                {{ i18n "view_credential" | default "View credential" }}
+                <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" width="14" height="14">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+              {{ end }}
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      {{ else }}
+        <p>{{ i18n "no_courses" | default "No courses available." }}</p>
+      {{ end }}
+    </div>
+  </div>
+</article>
+
+{{- end }}

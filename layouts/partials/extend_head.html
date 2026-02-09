@@ -1,3 +1,15 @@
+{{- if eq .Layout "courses" -}}
+{{- $coursesCSS := resources.Get "css/courses.css" }}
+{{- if $coursesCSS }}
+{{- if not site.Params.assets.disableFingerprinting }}
+{{- $coursesCSS := $coursesCSS | fingerprint }}
+<link rel="stylesheet" href="{{ $coursesCSS.RelPermalink }}" integrity="{{ $coursesCSS.Data.Integrity }}">
+{{- else }}
+<link rel="stylesheet" href="{{ $coursesCSS.RelPermalink }}">
+{{- end }}
+{{- end }}
+{{- end -}}
+
 {{- if eq .Layout "certifications" -}}
 {{- $certificationsCSS := resources.Get "css/certifications.css" }}
 {{- if $certificationsCSS }}
