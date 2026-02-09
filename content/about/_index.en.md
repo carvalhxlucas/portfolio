@@ -13,8 +13,8 @@ Beyond just writing code, I architect intelligent systems designed to solve comp
 ## Experience
 
 ### Essentia Group
-**Palhoça, Brazil**  
-Fullstack Developer Mid-level · 09–2025, present
+**Fullstack Developer Mid-level**  
+Palhoça, Brazil · 09–2025, present
 
 - **Generative AI & RAG Engineering:** Architected and developed intelligent patient support assistants using RAG (Retrieval-Augmented Generation). Leveraged LLMs and Vector Databases to automate patient triage and optimize administrative efficiency.
 - **Full Stack Development (HealthTech):** Built scalable and secure web applications for healthcare management using Node.js and Angular, ensuring high performance and responsive interfaces for critical systems.
@@ -22,8 +22,8 @@ Fullstack Developer Mid-level · 09–2025, present
 - **DevOps & CI/CD:** Optimized deployment processes using Docker and CI/CD pipelines, guaranteeing reliability from development to production environments.
 
 ### LOFT
-**São Paulo, Brazil**  
-Fullstack Developer | System Analyst · 08–2022, 08–2025
+**Fullstack Developer | System Analyst**  
+São Paulo, Brazil · 08–2022, 08–2025
 
 - **Internal Tooling & Automation Development:** Designed and implemented internal software solutions using Python to automate daily operations, streamlining workflows and significantly reducing manual effort.
 - **Data Engineering & SQL:** Developed and optimized complex SQL queries for large-scale data extraction and analysis, directly supporting business intelligence and operational decision-making.
@@ -31,8 +31,8 @@ Fullstack Developer | System Analyst · 08–2022, 08–2025
 - **SRE & Incident Resolution:** Conducted root cause analysis and troubleshooting of production applications using Datadog, collaborating closely with engineering teams to resolve critical availability issues and improve system reliability.
 
 ### Vista Software
-**São José, Brazil**  
-Support Analyst · 01–2021, 08–2022
+**Support Analyst**  
+São José, Brazil · 01–2021, 08–2022
 
 - **Automation & Scripting:** Developed automation scripts to generate critical business data, reducing manual effort and increasing data accuracy for clients.
 - **Database Management (MySQL):** Executed complex SQL queries for data extraction and analysis, providing technical insights to support client business logic.
@@ -40,15 +40,15 @@ Support Analyst · 01–2021, 08–2022
 - **Technical Mentorship:** Acted as a reference point for the team, mentoring junior members on resolving complex incidents and sharing best practices.
 
 ### ECG Sistemas
-**Palhoça, Brazil**  
-Customer Support Analyst · 11–2017, 10–2020
+**Customer Support Analyst**  
+Palhoça, Brazil · 11–2017, 10–2020
 
 - **Technical Troubleshooting:** Provided specialized support for the company's software, diagnosing issues and guiding clients on system best practices.
 - **Bug Analysis:** Acted as a liaison between end-users and the Engineering team, documenting bugs and validating fixes to ensure software quality.
 
 ### MedGoldman
-**São José, Brazil**  
-Assistant IT Manager · 03–2015, 08–2017
+**Assistant IT Manager**  
+São José, Brazil · 03–2015, 08–2017
 
 - **Server Administration:** Managed internal Windows and Linux servers, ensuring uptime and network security for the company's operations.
 - **Network Infrastructure:** Responsible for the maintenance and configuration of the internal network, hardware assets, and technical troubleshooting.

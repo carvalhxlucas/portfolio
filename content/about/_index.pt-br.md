@@ -14,8 +14,8 @@ Além de escrever código, projeto sistemas inteligentes para resolver problemas
 ## Experiência
 
 ### Essentia Group
-**Palhoça, Brasil**  
-Fullstack Developer Mid-level · 09–2025, presente
+**Fullstack Developer - Pleno**  
+Palhoça, Brasil · 09–2025, presente
 
 - **Generative AI & RAG Engineering:** Projetei e desenvolvi assistentes inteligentes de suporte ao paciente usando RAG (Retrieval-Augmented Generation). Utilizei LLMs e Vector Databases para automatizar triagem de pacientes e otimizar a eficiência administrativa.
 - **Full Stack Development (HealthTech):** Construí aplicações web escaláveis e seguras para gestão em saúde com Node.js e Angular, garantindo alta performance e interfaces responsivas para sistemas críticos.
@@ -23,8 +23,8 @@ Fullstack Developer Mid-level · 09–2025, presente
 - **DevOps & CI/CD:** Otimizei processos de deploy com Docker e pipelines de CI/CD, garantindo confiabilidade do desenvolvimento aos ambientes de produção.
 
 ### LOFT
-**São Paulo, Brasil**  
-Fullstack Developer | System Analyst · 08–2022, 08–2025
+**Desenvolvedor Fullstack | Analista de Sistemas**  
+São Paulo, Brasil · 08–2022, 08–2025
 
 - **Internal Tooling & Automation Development:** Projetei e implementei soluções de software internas em Python para automatizar operações diárias, simplificando fluxos e reduzindo esforço manual.
 - **Data Engineering & SQL:** Desenvolvi e otimizei consultas SQL complexas para extração e análise de dados em larga escala, apoiando business intelligence e tomada de decisão operacional.
@@ -32,8 +32,8 @@ Fullstack Developer | System Analyst · 08–2022, 08–2025
 - **SRE & Incident Resolution:** Realizei análise de causa raiz e troubleshooting de aplicações em produção com Datadog, em colaboração com as equipes de engenharia para resolver incidentes críticos de disponibilidade e melhorar a confiabilidade dos sistemas.
 
 ### Vista Software
-**São José, Brasil**  
-Support Analyst · 01–2021, 08–2022
+**Analista de Suporte**  
+Palhoça, Brasil · 01–2021, 08–2022
 
 - **Automation & Scripting:** Desenvolvi scripts de automação para gerar dados críticos de negócios, reduzindo esforço manual e aumentando a precisão dos dados para clientes.
 - **Database Management (MySQL):** Executei consultas SQL complexas para extração e análise de dados, fornecendo insights técnicos para apoiar a lógica de negócios dos clientes.
@@ -41,15 +41,15 @@ Support Analyst · 01–2021, 08–2022
 - **Technical Mentorship:** Atuei como referência para a equipe, mentorando membros júnior na resolução de incidentes complexos e compartilhando melhores práticas.
 
 ### ECG Sistemas
-**Palhoça, Brasil**  
-Customer Support Analyst · 11–2017, 10–2020
+**Analista de Suporte ao Cliente**  
+Palhoça, Brasil · 11–2017, 10–2020
 
 - **Technical Troubleshooting:** Prestei suporte especializado ao software da empresa, diagnosticando problemas e orientando clientes nas melhores práticas do sistema.
 - **Bug Analysis:** Atuei como ponte entre usuários finais e a equipe de Engenharia, documentando bugs e validando correções para garantir a qualidade do software.
 
 ### MedGoldman
-**São José, Brasil**  
-Assistant IT Manager · 03–2015, 08–2017
+**Assistente de TI**  
+Palhoça, Brasil · 03–2015, 08–2017
 
 - **Server Administration:** Gerenciei servidores internos Windows e Linux, garantindo uptime e segurança de rede para as operações da empresa.
 - **Network Infrastructure:** Responsável pela manutenção e configuração da rede interna, ativos de hardware e troubleshooting técnico.
