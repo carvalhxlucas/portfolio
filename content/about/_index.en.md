@@ -14,55 +14,43 @@ Currently focused on cloud infrastructure and distributed systems to solve real-
 
 ## Experience
 
-### Full Stack Developer (Mid-Level)
-**Essentia Group - Enhanced Company** · Full-time  
-**Period:** Sep 2025 - Present (4 mos)  
-**Location:** Palhoça, Santa Catarina, Brazil · On-site
+### Essentia Group
+**Palhoça, Brazil**  
+Fullstack Developer Mid-level · 09–2025, present
 
-**Main responsibilities:**
-- **Generative AI Implementation:** Spearheading the development of an intelligent patient support assistant using RAG. Leveraging LLMs and Vector Databases to automate responses and enhance the efficiency of the administrative team.
-- **AI Adoption & Developer Experience:** Pioneered the adoption of AI-assisted coding tools (Cursor/LLMs) within the team, enhancing coding velocity and operational efficiency.
-- **Full Stack Development:** Building and maintaining scalable web applications using Node.js and Angular, ensuring high performance and responsive UI for healthcare management systems.
-- **AI Integration:** Engineering robust APIs to seamlessly bridge Large Language Models (LLMs) with existing proprietary data and workflows.
-- **DevOps:** Streamlining deployment processes using Docker and CI/CD pipelines, ensuring reliability from development to production environments.
+- **Generative AI & RAG Engineering:** Architected and developed intelligent patient support assistants using RAG (Retrieval-Augmented Generation). Leveraged LLMs and Vector Databases to automate patient triage and optimize administrative efficiency.
+- **Full Stack Development (HealthTech):** Built scalable and secure web applications for healthcare management using Node.js and Angular, ensuring high performance and responsive interfaces for critical systems.
+- **AI Integration & API Engineering:** Designed robust APIs to seamlessly connect Large Language Models (LLMs) with proprietary data and existing workflows, ensuring data consistency and system reliability.
+- **DevOps & CI/CD:** Optimized deployment processes using Docker and CI/CD pipelines, guaranteeing reliability from development to production environments.
 
-### System Analyst
-**Loft** · Full-time  
-**Period:** Aug 2022 - Aug 2025 (3 yrs 1 mo)  
-**Location:** São José, Santa Catarina, Brazil · Hybrid
+### LOFT
+**São Paulo, Brazil**  
+Fullstack Developer | System Analyst · 08–2022, 08–2025
 
-**Main responsibilities:**
-- **Cloud Migration (AWS):** Executed the migration of client environments from legacy on-premise servers to AWS Cloud, ensuring data integrity and minimal downtime.
-- **Observability & SRE:** Monitored application health and performance using Datadog. Actively participated in Incident Management, collaborating with engineering teams to troubleshoot and resolve critical availability issues.
-- **Internal Tools & Automation:** Developed internal software solutions to automate daily operations and optimized workflows.
-- **Data Operations:** Created complex SQL scripts for data extraction and analysis, supporting the operations team with critical business intelligence.
+- **Internal Tooling & Automation Development:** Designed and implemented internal software solutions using Python to automate daily operations, streamlining workflows and significantly reducing manual effort.
+- **Data Engineering & SQL:** Developed and optimized complex SQL queries for large-scale data extraction and analysis, directly supporting business intelligence and operational decision-making.
+- **Cloud Engineering (AWS):** Executed the technical migration of legacy on-premise client environments to AWS cloud infrastructure, ensuring data integrity and high availability with minimal downtime.
+- **SRE & Incident Resolution:** Conducted root cause analysis and troubleshooting of production applications using Datadog, collaborating closely with engineering teams to resolve critical availability issues and improve system reliability.
 
-### Support Engineer
-**Vista Software** · Full-time  
-**Period:** Mar 2021 - Aug 2022 (1 yr 6 mos)  
-**Location:** São José, Santa Catarina, Brazil · Hybrid
+### Vista Software
+**São José, Brazil**  
+Support Analyst · 01–2021, 08–2022
 
-**Main responsibilities:**
 - **Automation & Scripting:** Developed automation scripts to generate critical business data, reducing manual effort and increasing data accuracy for clients.
 - **Database Management (MySQL):** Executed complex SQL queries for data extraction and analysis, providing technical insights to support client business logic.
 - **Advanced Technical Support:** Handled high-complexity technical demands, troubleshooting infrastructure and software issues directly with the engineering team.
 - **Technical Mentorship:** Acted as a reference point for the team, mentoring junior members on resolving complex incidents and sharing best practices.
 
-### Customer Support
-**ECG Sistemas LTDA. EPP.** · Full-time  
-**Period:** Nov 2017 - Oct 2020 (3 yrs)  
-**Location:** Palhoça, Santa Catarina, Brazil
+### ECG Sistemas
+**Palhoça, Brazil**  
+Customer Support Analyst · 11–2017, 10–2020
 
-**Main responsibilities:**
-- Technical troubleshooting
-- Bug analysis
+- **Technical Troubleshooting:** Provided specialized support for the company's software, diagnosing issues and guiding clients on system best practices.
+- **Bug Analysis:** Acted as a liaison between end-users and the Engineering team, documenting bugs and validating fixes to ensure software quality.
 
-### Assistant IT Manager
-**MedGoldman Ind. e Com. Ltda.** · Full-time  
-**Period:** Mar 2015 - Aug 2017 (2 yrs 6 mos)  
-**Location:** São José, Santa Catarina, Brazil · On-site
+### MedGoldman
+**São José, Brazil**  
+Assistant IT Manager · 03–2015, 08–2017
 
-**Main responsibilities:**
 - **Server Administration:** Managed internal Windows and Linux servers, ensuring uptime and network security for the company's operations.
 - **Network Infrastructure:** Responsible for the maintenance and configuration of the internal network, hardware assets, and technical troubleshooting.
-

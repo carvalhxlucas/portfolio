@@ -12,57 +12,45 @@ Meu foco vai além de escrever código; desenho sistemas que são seguros, efici
 
 Atualmente, estou focado em infraestrutura em nuvem e sistemas distribuídos para resolver desafios de engenharia do mundo real.
 
-## Experiências
+## Experiência
 
-### Full Stack Developer (Mid-Level)
-**Essentia Group - Enhanced Company** · Full-time  
-**Período:** Set 2025 - Presente (4 meses)  
-**Localização:** Palhoça, Santa Catarina, Brasil · Presencial
+### Essentia Group
+**Palhoça, Brasil**  
+Fullstack Developer Mid-level · 09–2025, presente
 
-**Principais responsabilidades:**
-- **Implementação de IA Generativa:** Liderando o desenvolvimento de um assistente inteligente de suporte ao paciente usando RAG. Utilizando LLMs e Vector Databases para automatizar respostas e aumentar a eficiência da equipe administrativa.
-- **Adoção de IA e Developer Experience:** Pioneiro na adoção de ferramentas de codificação assistida por IA (Cursor/LLMs) dentro da equipe, aumentando a velocidade de codificação e eficiência operacional.
-- **Desenvolvimento Full Stack:** Construindo e mantendo aplicações web escaláveis usando Node.js e Angular, garantindo alta performance e UI responsiva para sistemas de gestão de saúde.
-- **Integração de IA:** Desenvolvendo APIs robustas para integrar perfeitamente Large Language Models (LLMs) com dados proprietários e fluxos de trabalho existentes.
-- **DevOps:** Otimizando processos de deploy usando Docker e pipelines CI/CD, garantindo confiabilidade desde o desenvolvimento até ambientes de produção.
+- **Generative AI & RAG Engineering:** Projetei e desenvolvi assistentes inteligentes de suporte ao paciente usando RAG (Retrieval-Augmented Generation). Utilizei LLMs e Vector Databases para automatizar triagem de pacientes e otimizar a eficiência administrativa.
+- **Full Stack Development (HealthTech):** Construí aplicações web escaláveis e seguras para gestão em saúde com Node.js e Angular, garantindo alta performance e interfaces responsivas para sistemas críticos.
+- **AI Integration & API Engineering:** Projetei APIs robustas para conectar Large Language Models (LLMs) a dados proprietários e fluxos de trabalho existentes, garantindo consistência de dados e confiabilidade do sistema.
+- **DevOps & CI/CD:** Otimizei processos de deploy com Docker e pipelines de CI/CD, garantindo confiabilidade do desenvolvimento aos ambientes de produção.
 
-### System Analyst
-**Loft** · Full-time  
-**Período:** Ago 2022 - Ago 2025 (3 anos 1 mês)  
-**Localização:** São José, Santa Catarina, Brasil · Híbrido
+### LOFT
+**São Paulo, Brasil**  
+Fullstack Developer | System Analyst · 08–2022, 08–2025
 
-**Principais responsabilidades:**
-- **Migração para Cloud (AWS):** Executei a migração de ambientes de clientes de servidores on-premise legados para AWS Cloud, garantindo integridade de dados e tempo de inatividade mínimo.
-- **Observabilidade e SRE:** Monitorei a saúde e performance de aplicações usando Datadog. Participei ativamente do Gerenciamento de Incidentes, colaborando com equipes de engenharia para diagnosticar e resolver problemas críticos de disponibilidade.
-- **Ferramentas Internas e Automação:** Desenvolvi soluções de software internas para automatizar operações diárias e otimizar fluxos de trabalho.
-- **Operações de Dados:** Criei scripts SQL complexos para extração e análise de dados, apoiando a equipe de operações com inteligência de negócios crítica.
+- **Internal Tooling & Automation Development:** Projetei e implementei soluções de software internas em Python para automatizar operações diárias, simplificando fluxos e reduzindo esforço manual.
+- **Data Engineering & SQL:** Desenvolvi e otimizei consultas SQL complexas para extração e análise de dados em larga escala, apoiando business intelligence e tomada de decisão operacional.
+- **Cloud Engineering (AWS):** Executei a migração técnica de ambientes on-premise legados para infraestrutura AWS, garantindo integridade de dados e alta disponibilidade com mínimo downtime.
+- **SRE & Incident Resolution:** Realizei análise de causa raiz e troubleshooting de aplicações em produção com Datadog, em colaboração com as equipes de engenharia para resolver incidentes críticos de disponibilidade e melhorar a confiabilidade dos sistemas.
 
-### Support Engineer
-**Vista Software** · Full-time  
-**Período:** Mar 2021 - Ago 2022 (1 ano 6 meses)  
-**Localização:** São José, Santa Catarina, Brasil · Híbrido
+### Vista Software
+**São José, Brasil**  
+Support Analyst · 01–2021, 08–2022
 
-**Principais responsabilidades:**
-- **Automação e Scripting:** Desenvolvi scripts de automação para gerar dados críticos de negócios, reduzindo esforço manual e aumentando a precisão dos dados para clientes.
-- **Gerenciamento de Banco de Dados (MySQL):** Executei consultas SQL complexas para extração e análise de dados, fornecendo insights técnicos para apoiar a lógica de negócios dos clientes.
-- **Suporte Técnico Avançado:** Atendi demandas técnicas de alta complexidade, diagnosticando problemas de infraestrutura e software diretamente com a equipe de engenharia.
-- **Mentoria Técnica:** Atuei como ponto de referência para a equipe, mentorando membros júnior na resolução de incidentes complexos e compartilhando melhores práticas.
+- **Automation & Scripting:** Desenvolvi scripts de automação para gerar dados críticos de negócios, reduzindo esforço manual e aumentando a precisão dos dados para clientes.
+- **Database Management (MySQL):** Executei consultas SQL complexas para extração e análise de dados, fornecendo insights técnicos para apoiar a lógica de negócios dos clientes.
+- **Advanced Technical Support:** Atendi demandas técnicas de alta complexidade, diagnosticando problemas de infraestrutura e software diretamente com a equipe de engenharia.
+- **Technical Mentorship:** Atuei como referência para a equipe, mentorando membros júnior na resolução de incidentes complexos e compartilhando melhores práticas.
 
-### Customer Support
-**ECG Sistemas LTDA. EPP.** · Full-time  
-**Período:** Nov 2017 - Out 2020 (3 anos)  
-**Localização:** Palhoça, Santa Catarina, Brasil
+### ECG Sistemas
+**Palhoça, Brasil**  
+Customer Support Analyst · 11–2017, 10–2020
 
-**Principais responsabilidades:**
-- Troubleshooting técnico
-- Análise de bugs
+- **Technical Troubleshooting:** Prestei suporte especializado ao software da empresa, diagnosticando problemas e orientando clientes nas melhores práticas do sistema.
+- **Bug Analysis:** Atuei como ponte entre usuários finais e a equipe de Engenharia, documentando bugs e validando correções para garantir a qualidade do software.
 
-### Assistant IT Manager
-**MedGoldman Ind. e Com. Ltda.** · Full-time  
-**Período:** Mar 2015 - Ago 2017 (2 anos 6 meses)  
-**Localização:** São José, Santa Catarina, Brasil · Presencial
+### MedGoldman
+**São José, Brasil**  
+Assistant IT Manager · 03–2015, 08–2017
 
-**Principais responsabilidades:**
-- **Administração de Servidores:** Gerenciei servidores internos Windows e Linux, garantindo uptime e segurança de rede para as operações da empresa.
-- **Infraestrutura de Rede:** Responsável pela manutenção e configuração da rede interna, ativos de hardware e troubleshooting técnico.
-
+- **Server Administration:** Gerenciei servidores internos Windows e Linux, garantindo uptime e segurança de rede para as operações da empresa.
+- **Network Infrastructure:** Responsável pela manutenção e configuração da rede interna, ativos de hardware e troubleshooting técnico.
