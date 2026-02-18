@@ -5,6 +5,9 @@ draft: false
 tags: ["Python", "Dashboard", "Cryptocurrency"]
 author: "Lucas Carvalho"
 summary: "Dashboard for visualizing and tracking cryptocurrency data."
+cover:
+  image: /images/projects/cryptodash.svg
+  alt: "CryptoDash"
 ---
 
 ## The Challenge

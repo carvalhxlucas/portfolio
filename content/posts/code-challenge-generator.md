@@ -5,6 +5,9 @@ draft: false
 tags: ["Python", "LangChain", "OpenAI", "Streamlit", "AI Engineering"]
 author: "Lucas Carvalho"
 summary: "An AI Engineering tool that generates structured technical interview challenges with hidden test cases validated via Pydantic."
+cover:
+  image: /images/projects/code-challenge-generator.svg
+  alt: "Code Challenge Generator"
 ---
 
 ## The Challenge

@@ -5,6 +5,9 @@ draft: false
 tags: ["Python", "FastAPI", "Redis", "PostgreSQL", "LLM", "Distributed Systems"]
 author: "Lucas Carvalho"
 summary: "Event-driven, distributed engine for orchestrating autonomous LLM agents, built with FastAPI, Redis, and PostgreSQL."
+cover:
+  image: /images/projects/agents-swarm.svg
+  alt: "Agents Swarm"
 ---
 
 ## The Challenge

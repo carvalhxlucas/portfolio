@@ -18,6 +18,11 @@
         <div class="courses-grid">
           {{ range $courses.courses }}
           <div class="course-card">
+            {{ if .coverImage }}
+            <div class="course-cover">
+              <img src="{{ .coverImage | absURL }}" alt="{{ .name }}" loading="lazy">
+            </div>
+            {{ end }}
             <div class="course-badge">
               {{ if .badgeUrl }}
               <img src="{{ .badgeUrl }}" alt="{{ .name }} badge" loading="lazy">

@@ -5,6 +5,9 @@ draft: false
 tags: ["Python", "FastAPI", "RabbitMQ", "ClickHouse", "OpenTelemetry", "Observability"]
 author: "Lucas Carvalho"
 summary: "High-throughput, decoupled observability engine for LLMs, built with FastAPI, RabbitMQ, and ClickHouse using OpenTelemetry standards."
+cover:
+  image: /images/projects/llm-telemetry-pipeline.svg
+  alt: "LLM Telemetry Pipeline"
 ---
 
 ## The Challenge

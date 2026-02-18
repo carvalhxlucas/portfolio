@@ -5,6 +5,9 @@ draft: false
 tags: ["Python", "FastAPI", "LangChain", "RAG", "Docker", "Redis"]
 author: "Lucas Carvalho"
 summary: "Production-ready RAG API with Hybrid Search (Vector + Keyword), Redis caching for cost optimization, and source citations."
+cover:
+  image: /images/projects/enterprise-rag-engine.svg
+  alt: "Enterprise RAG Engine"
 ---
 
 ## The Challenge
