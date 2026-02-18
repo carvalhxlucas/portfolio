@@ -9,6 +9,7 @@ buildExpired = false
 
 # --- Global settings ---
 [params]
+  author = { name = "Lucas Carvalho" }
   defaultTheme = "auto"
   ShowReadingTime = true
   ShowShareButtons = true
