@@ -23,11 +23,11 @@
               <img src="{{ .coverImage | absURL }}" alt="{{ .name }}" loading="lazy">
             </div>
             {{ end }}
+            {{ if .badgeUrl }}
             <div class="course-badge">
-              {{ if .badgeUrl }}
               <img src="{{ .badgeUrl }}" alt="{{ .name }} badge" loading="lazy">
-              {{ end }}
             </div>
+            {{ end }}
             <div class="course-content">
               <h3 class="course-name">{{ .name }}</h3>
               <p class="course-issuer">{{ .issuer }}</p>
