@@ -6,7 +6,7 @@ tags: ["Python", "LLM", "Agents", "Market Data", "Automation"]
 author: "Lucas Carvalho"
 summary: "Agent for monitoring and analyzing market data, leveraging LLMs for automated insights and alerts."
 cover:
-  image: /images/projects/market-radar-agent.svg
+  image: /images/projects/market-radar-agent.png
   alt: "Market Radar Agent"
 ---
 
