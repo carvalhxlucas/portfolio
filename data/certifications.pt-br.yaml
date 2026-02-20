@@ -2,7 +2,7 @@ certifications:
   - name: "Generative AI Fundamentals"
     issuer: "Databricks"
     date: "2025-02-01"
-    badgeUrl: "https://images.credly.com/size/80x80/images/8da33d20-70e4-4820-9dfa-b4c9b9fd6f15/2fdb8d85-57f2-475d-a423-ccd8e04c95db_cached_image_20260220-32-1d5nvi.png
+    badgeUrl: "https://images.credly.com/size/80x80/images/8da33d20-70e4-4820-9dfa-b4c9b9fd6f15/2fdb8d85-57f2-475d-a423-ccd8e04c95db_cached_image_20260220-32-1d5nvi.png"
     credentialUrl: "https://api.accredible.com/v1/obi/badge_assertions/e152a94a-238a-4bde-8884-0c660bb41470"
     description: "Fundamentos de IA generativa, LLMs e práticas de IA responsável."
   - name: "Machine Learning with Python"
@@ -11,4 +11,3 @@ certifications:
     badgeUrl: "https://images.credly.com/size/80x80/images/56c60565-e945-4bcd-b8a6-9b2f43e1b0d9/Coursera_20Machine_20Learning_20with_20Python_20V2.png"
     credentialUrl: "https://www.credly.com/badges/6a242996-aab4-493e-8c3d-58ef6938808b/public_url"
     description: "Certificação em Machine Learning com Python"
-
