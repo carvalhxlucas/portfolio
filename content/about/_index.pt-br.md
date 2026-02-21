@@ -7,29 +7,29 @@ slug: "sobre"
 
 ## Sobre Mim
 
-Sou um Engenheiro de Software com foco na interseção entre Arquitetura em Nuvem e IA Generativa.
-
-Além de escrever código, projeto sistemas inteligentes para resolver problemas complexos do mundo real. Atualmente, meu foco está em construir soluções escaláveis de RAG (Retrieval-Augmented Generation) e APIs de alta performance utilizando Python, Node.js e AWS. Conecto engenharia de software robusta às capacidades da IA moderna, garantindo que a lógica de backend se traduza em experiências fluidas, eficientes e centradas no usuário.
+Sou um Engenheiro de Software especializado na interseção entre IA Generativa e Arquitetura em Nuvem. Com uma base sólida em engenharia de dados, desenvolvimento backend (Python/Node.js) e infraestrutura AWS, meu foco atual é o design de sistemas RAG escaláveis, orquestração de LLMs e automação de fluxos de negócios complexos. Acredito que a verdadeira inovação em IA vai muito além de consumir APIs: trata-se de construir sistemas altamente confiáveis, garantir a consistência dos dados e elevar todo o ciclo de desenvolvimento de software através de abordagens impulsionadas por IA.
 
 ## Experiência
 
 ### Essentia Group
-**Fullstack Developer - Pleno**  
+**Full Stack AI Developer - Pleno**  
 Palhoça, Brasil · 09–2025, presente
 
-- **Generative AI & RAG Engineering:** Projetei e desenvolvi assistentes inteligentes de suporte ao paciente usando RAG (Retrieval-Augmented Generation). Utilizei LLMs e Vector Databases para automatizar triagem de pacientes e otimizar a eficiência administrativa.
-- **Full Stack Development (HealthTech):** Construí aplicações web escaláveis e seguras para gestão em saúde com Node.js e Angular, garantindo alta performance e interfaces responsivas para sistemas críticos.
-- **AI Integration & API Engineering:** Projetei APIs robustas para conectar Large Language Models (LLMs) a dados proprietários e fluxos de trabalho existentes, garantindo consistência de dados e confiabilidade do sistema.
-- **DevOps & CI/CD:** Otimizei processos de deploy com Docker e pipelines de CI/CD, garantindo confiabilidade do desenvolvimento aos ambientes de produção.
+- **Engenharia de IA Generativa & RAG:** Arquitetou e desenvolveu assistentes inteligentes de suporte ao paciente utilizando RAG. Liderou a integração de LLMs e Bancos de Dados Vetoriais para automatizar fluxos de triagem, reduzindo significativamente a carga operacional da equipe clínica e administrativa dos clientes.
+- **Integração de Sistemas e LLM Orchestration:** Projetou APIs robustas e escaláveis para orquestrar a comunicação entre modelos fundacionais (LLMs), bases de dados proprietárias e sistemas legados, com foco na redução de latência e garantia de consistência (redução de alucinações) nas respostas da IA.
+- **AI-Driven Development e Liderança Técnica:** Liderou a adoção de ferramentas de AI-assisted coding (como o Cursor) no fluxo de trabalho da equipe de desenvolvimento, otimizando o ciclo de desenvolvimento, acelerando a velocidade das entregas e promovendo uma cultura de produtividade impulsionada por IA.
+- **Desenvolvimento Full Stack (HealthTech):** Auxiliou na construção de aplicações web seguras e responsivas para gestão de saúde utilizando Node.js e Angular, garantindo alta performance, escalabilidade e estrita conformidade no tratamento de dados médicos sensíveis.
+- **DevOps e Cloud Deployment:** Otimizou pipelines de CI/CD e containerização com Docker, assegurando entregas ágeis e a manutenção de ambientes de produção altamente confiáveis para aplicações críticas de saúde.
 
 ### LOFT
 **Desenvolvedor Fullstack | Analista de Sistemas**  
 São Paulo, Brasil · 08–2022, 08–2025
 
-- **Internal Tooling & Automation Development:** Projetei e implementei soluções de software internas em Python para automatizar operações diárias, simplificando fluxos e reduzindo esforço manual.
-- **Data Engineering & SQL:** Desenvolvi e otimizei consultas SQL complexas para extração e análise de dados em larga escala, apoiando business intelligence e tomada de decisão operacional.
-- **Cloud Engineering (AWS):** Executei a migração técnica de ambientes on-premise legados para infraestrutura AWS, garantindo integridade de dados e alta disponibilidade com mínimo downtime.
-- **SRE & Incident Resolution:** Realizei análise de causa raiz e troubleshooting de aplicações em produção com Datadog, em colaboração com as equipes de engenharia para resolver incidentes críticos de disponibilidade e melhorar a confiabilidade dos sistemas.
+- **Data Engineering e Pipelines:** Desenvolveu e otimizou scripts SQL complexos para manipulação e extração de grandes volumes de dados, garantindo a estruturação e a confiabilidade das informações essenciais para inteligência de negócios e downstream analytics.
+- **Cloud Engineering (AWS):** Conduziu a migração de workloads legados (on-premise) para a infraestrutura AWS, projetando ambientes escaláveis, com alta disponibilidade e focados na integridade dos dados.
+- **Desenvolvimento de Automação (Python):** Projetou e implementou soluções de software internas em Python para automatizar fluxos de trabalho manuais, reduzindo gargalos operacionais e aumentando a eficiência das equipes.
+- **Observabilidade e SRE:** Realizou análise de causa raiz e troubleshooting de aplicações críticas em produção utilizando Datadog, colaborando ativamente na correção de bugs e otimização de performance dos sistemas.
+- **Mentoria e Liderança Técnica:** Atuou como referência técnica para desenvolvedores júnior, conduzindo code reviews e disseminando boas práticas de engenharia de software e desenvolvimento em Python, elevando a qualidade técnica das entregas do time.
 
 ### Vista Software
 **Analista de Suporte**  

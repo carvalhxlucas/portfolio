@@ -6,29 +6,29 @@ draft: false
 
 ## About Me
 
-I am a Software Engineer specializing in the intersection of Cloud Architecture and Generative AI.
-
-Beyond just writing code, I architect intelligent systems designed to solve complex real-world problems. Currently, my focus is on building scalable RAG (Retrieval-Augmented Generation) solutions and high-performance APIs utilizing Python, Node.js, and AWS. I bridge the gap between robust software engineering and modern AI capabilities, ensuring that backend logic translates into seamless, efficient, and user-centric experiences.
+I am a Software Engineer specializing at the intersection of Generative AI and Cloud Architecture. With a strong foundation in data engineering, backend development (Python/Node.js), and AWS infrastructure, I focus on designing scalable RAG systems, orchestrating LLMs, and automating complex business workflows. I believe that true AI innovation goes beyond consuming APIs, it is about building highly reliable systems, ensuring data consistency, and elevating the software development life cycle through AI-driven approaches.
 
 ## Experience
 
 ### Essentia Group
-**Fullstack Developer Mid-level**  
+**Full Stack AI Developer (Mid-level)**  
 Palhoça, Brazil · 09–2025, present
 
-- **Generative AI & RAG Engineering:** Architected and developed intelligent patient support assistants using RAG (Retrieval-Augmented Generation). Leveraged LLMs and Vector Databases to automate patient triage and optimize administrative efficiency.
-- **Full Stack Development (HealthTech):** Built scalable and secure web applications for healthcare management using Node.js and Angular, ensuring high performance and responsive interfaces for critical systems.
-- **AI Integration & API Engineering:** Designed robust APIs to seamlessly connect Large Language Models (LLMs) with proprietary data and existing workflows, ensuring data consistency and system reliability.
-- **DevOps & CI/CD:** Optimized deployment processes using Docker and CI/CD pipelines, guaranteeing reliability from development to production environments.
+- **Generative AI & RAG Engineering:** Architected and developed intelligent patient support assistants using RAG (Retrieval-Augmented Generation). Led the integration of LLMs and Vector Databases to automate triage workflows, significantly reducing the operational load for clients' clinical and administrative teams.
+- **Systems Integration & LLM Orchestration:** Designed robust and scalable APIs to orchestrate communication between foundation models (LLMs), proprietary databases, and legacy systems, focusing on low latency and ensuring consistency (reducing hallucinations) in AI responses.
+- **AI-Driven Development & Technical Leadership:** Spearheaded the adoption of AI-assisted coding tools (such as Cursor) within the engineering team's workflow, optimizing the software development life cycle (SDLC), accelerating delivery speed, and fostering an AI-driven productivity culture.
+- **Full Stack Development (HealthTech):** Assisted in building secure and responsive web applications for healthcare management using Node.js and Angular, ensuring high performance, scalability, and strict compliance in handling sensitive medical data.
+- **DevOps & Cloud Deployment:** Optimized CI/CD pipelines and Docker containerization, ensuring agile deliveries and maintaining highly reliable production environments for mission-critical healthcare applications.
 
 ### LOFT
 **Fullstack Developer | System Analyst**  
 São Paulo, Brazil · 08–2022, 08–2025
 
-- **Internal Tooling & Automation Development:** Designed and implemented internal software solutions using Python to automate daily operations, streamlining workflows and significantly reducing manual effort.
-- **Data Engineering & SQL:** Developed and optimized complex SQL queries for large-scale data extraction and analysis, directly supporting business intelligence and operational decision-making.
-- **Cloud Engineering (AWS):** Executed the technical migration of legacy on-premise client environments to AWS cloud infrastructure, ensuring data integrity and high availability with minimal downtime.
-- **SRE & Incident Resolution:** Conducted root cause analysis and troubleshooting of production applications using Datadog, collaborating closely with engineering teams to resolve critical availability issues and improve system reliability.
+- **Data Engineering & Pipelines:** Developed and optimized complex SQL scripts for large-scale data manipulation and extraction, ensuring the structuring and reliability of essential information for business intelligence and downstream analytics.
+- **Cloud Engineering (AWS):** Led the migration of legacy on-premise workloads to AWS infrastructure, designing scalable, high-availability environments focused on data integrity.
+- **Automation Development (Python):** Designed and implemented internal software solutions in Python to automate manual workflows, reducing operational bottlenecks and significantly increasing team efficiency.
+- **Observability & SRE:** Conducted root cause analysis and troubleshooting of critical production applications using Datadog, actively collaborating on bug fixes and system performance optimization.
+- **Mentorship & Technical Leadership:** Acted as a technical reference for junior developers, conducting code reviews and disseminating software engineering and Python best practices, elevating the team's overall technical delivery quality.
 
 ### Vista Software
 **Support Analyst**  
