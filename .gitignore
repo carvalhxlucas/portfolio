@@ -1,4 +1,19 @@
-public/
-resources/
-.hugo_build.lock
+# Next.js
+.next/
+next-env.d.ts
 
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# OS
+.DS_Store
+
+# Misc
+*.log
+*.tmp
+*.bak
+
+CLAUDE.md

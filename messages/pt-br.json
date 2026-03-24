@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "projects": "Projetos",
+    "about": "Sobre",
+    "certifications": "Certificações",
+    "courses": "Cursos",
+    "articles": "Artigos"
+  },
+  "hero": {
+    "role": "Engenheiro de IA/ML",
+    "bio": "Construindo sistemas RAG escaláveis, orquestrando LLMs e automatizando fluxos de trabalho complexos na interseção de IA Generativa e Cloud Architecture.",
+    "cta_projects": "Ver Projetos",
+    "cta_about": "Sobre mim",
+    "featured": "Projetos em Destaque"
+  },
+  "projects": {
+    "title": "Projetos",
+    "subtitle": "Uma seleção de sistemas e ferramentas que construí.",
+    "view_code": "Ver no GitHub"
+  },
+  "about": {
+    "title": "Sobre",
+    "subtitle": "Trajetória & Experiência",
+    "bio": "Sou um Engenheiro de Software especializado na interseção de IA Generativa e Cloud Architecture. Com base sólida em engenharia de dados, desenvolvimento backend (Python/Node.js) e infraestrutura AWS, foco em projetar sistemas RAG escaláveis, orquestrar LLMs e automatizar fluxos de trabalho complexos.",
+    "experience": "Experiência"
+  },
+  "certifications": {
+    "title": "Certificações",
+    "subtitle": "Credenciais e badges profissionais.",
+    "view_credential": "Ver credencial"
+  },
+  "courses": {
+    "title": "Cursos",
+    "subtitle": "Aprendizado contínuo em ML, IA e engenharia.",
+    "view_certificate": "Ver certificado"
+  },
+  "articles": {
+    "title": "Artigos",
+    "subtitle": "Sobre engenharia de IA, design de sistemas e desenvolvimento.",
+    "coming_soon": "Em breve",
+    "coming_soon_desc": "Estou trabalhando em artigos sobre engenharia de IA e design de sistemas. Volte em breve."
+  },
+  "footer": {
+    "built_with": "Feito com Next.js & Tailwind CSS",
+    "rights": "Todos os direitos reservados"
+  }
+}

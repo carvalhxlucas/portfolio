@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "projects": "Projects",
+    "about": "About",
+    "certifications": "Certifications",
+    "courses": "Courses",
+    "articles": "Articles"
+  },
+  "hero": {
+    "role": "AI/ML Engineer",
+    "bio": "Building scalable RAG systems, orchestrating LLMs, and automating complex workflows at the intersection of Generative AI and Cloud Architecture.",
+    "cta_projects": "View Projects",
+    "cta_about": "About me",
+    "featured": "Featured Projects"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "A selection of systems and tools I've built.",
+    "view_code": "View on GitHub"
+  },
+  "about": {
+    "title": "About",
+    "subtitle": "Background & Experience",
+    "bio": "I am a Software Engineer specializing at the intersection of Generative AI and Cloud Architecture. With a strong foundation in data engineering, backend development (Python/Node.js), and AWS infrastructure, I focus on designing scalable RAG systems, orchestrating LLMs, and automating complex business workflows.",
+    "experience": "Experience"
+  },
+  "certifications": {
+    "title": "Certifications",
+    "subtitle": "Professional credentials and badges.",
+    "view_credential": "View credential"
+  },
+  "courses": {
+    "title": "Courses",
+    "subtitle": "Continuous learning across ML, AI, and engineering.",
+    "view_certificate": "View certificate"
+  },
+  "articles": {
+    "title": "Articles",
+    "subtitle": "Writing on AI engineering, systems design, and development.",
+    "coming_soon": "Coming soon",
+    "coming_soon_desc": "I'm working on articles about AI engineering and system design. Check back soon."
+  },
+  "footer": {
+    "built_with": "Built with Next.js & Tailwind CSS",
+    "rights": "All rights reserved"
+  }
+}

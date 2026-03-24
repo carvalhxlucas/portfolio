@@ -1,4 +1,0 @@
----
-title: "Projetos"
-draft: false
----
