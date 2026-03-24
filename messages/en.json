@@ -7,7 +7,7 @@
     "articles": "Articles"
   },
   "hero": {
-    "role": "AI/ML Engineer",
+    "role": "AI Engineer",
     "bio": "Building scalable RAG systems, orchestrating LLMs, and automating complex workflows at the intersection of Generative AI and Cloud Architecture.",
     "cta_projects": "View Projects",
     "cta_about": "About me",

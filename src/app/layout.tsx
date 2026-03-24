@@ -9,11 +9,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Lucas Carvalho — AI/ML Engineer',
+  title: 'Lucas Carvalho — AI Engineer',
   description:
     'Software Engineer specializing in Generative AI, RAG systems, and Cloud Architecture.',
   openGraph: {
-    title: 'Lucas Carvalho — AI/ML Engineer',
+    title: 'Lucas Carvalho — AI Engineer',
     description:
       'Software Engineer specializing in Generative AI, RAG systems, and Cloud Architecture.',
     url: 'https://carvalhxlucas.pro',
