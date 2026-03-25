@@ -112,4 +112,12 @@ export const courses: Course[] = [
     description: 'AI coding assistant architecture, tool use systems, context management and GitHub integration.',
     coverImage: '/images/courses/claude-code-in-action-anthropic.svg',
   },
+  {
+    name: 'Introduction to Model Context Protocol',
+    issuer: 'Anthropic',
+    date: '2026-03-25',
+    credentialUrl: 'https://verify.skilljar.com/c/ss556kniyr4z',
+    description: 'Building MCP servers and clients from scratch, covering tools, resources and prompts for connecting Claude with external services.',
+    coverImage: '/images/courses/introduction-to-mcp-anthropic.svg',
+  },
 ];

@@ -41,8 +41,7 @@ export default function Navbar() {
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="text-white font-semibold tracking-tight hover:opacity-80 transition-opacity">
-          <span className="gradient-text font-bold">LC</span>
-          <span className="ml-2 text-sm text-slate-400 hidden sm:inline">Lucas Carvalho</span>
+          <span className="gradient-text font-bold text-sm">@carvalhxlucas</span>
         </Link>
 
         {/* Desktop nav */}
