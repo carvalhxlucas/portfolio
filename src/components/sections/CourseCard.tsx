@@ -11,6 +11,7 @@ const issuerColors: Record<string, string> = {
   Google: 'text-green-400 bg-green-500/10 border-green-500/20',
   Meta: 'text-sky-400 bg-sky-500/10 border-sky-500/20',
   Rocketseat: 'text-violet-400 bg-violet-500/10 border-violet-500/20',
+  Anthropic: 'text-amber-400 bg-amber-500/10 border-amber-500/20',
 };
 
 const defaultColor = 'text-slate-400 bg-white/5 border-white/10';

@@ -104,4 +104,12 @@ export const courses: Course[] = [
     description: 'Clustering, dimensionality reduction and unsupervised methods.',
     coverImage: '/images/courses/unsupervised-learning-stanford.svg',
   },
+  {
+    name: 'Claude Code in Action',
+    issuer: 'Anthropic',
+    date: '2026-03-24',
+    credentialUrl: 'https://verify.skilljar.com/c/gsrzennawisr',
+    description: 'AI coding assistant architecture, tool use systems, context management and GitHub integration.',
+    coverImage: '/images/courses/claude-code-in-action-anthropic.svg',
+  },
 ];
