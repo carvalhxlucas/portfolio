@@ -22,6 +22,7 @@
   "homepage": "https://github.com/carvalhxlucas/portfolio#readme",
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
     "framer-motion": "^12.38.0",
     "lucide-react": "^1.0.1",
     "next": "^16.2.1",
