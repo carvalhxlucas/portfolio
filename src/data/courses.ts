@@ -120,4 +120,12 @@ export const courses: Course[] = [
     description: 'Building MCP servers and clients from scratch, covering tools, resources and prompts for connecting Claude with external services.',
     coverImage: '/images/courses/introduction-to-mcp-anthropic.svg',
   },
+  {
+    name: 'Model Context Protocol: Advanced Topics',
+    issuer: 'Anthropic',
+    date: '2026-03-26',
+    credentialUrl: 'https://verify.skilljar.com/c/6c328ikixbg2',
+    description: 'Advanced MCP development covering server-client communication, transport mechanisms, sampling, notifications and production deployment.',
+    coverImage: '/images/courses/mcp-advanced-topics-anthropic.svg',
+  },
 ];
