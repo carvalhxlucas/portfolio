@@ -21,7 +21,7 @@
   "about": {
     "title": "About",
     "subtitle": "Background & Experience",
-    "bio": "I am a Software Engineer specializing at the intersection of Generative AI and Cloud Architecture. With a strong foundation in data engineering, backend development (Python/Node.js), and AWS infrastructure, I focus on designing scalable RAG systems, orchestrating LLMs, and automating complex business workflows.",
+    "bio": "I'm a Software Engineer specializing in AI systems, specifically in designing and deploying production-grade RAG pipelines, LLM orchestration, and multi-agent workflows.\n\nOver the past year, I've been working at the intersection of Generative AI and backend engineering: building intelligent patient support assistants using RAG and Vector Databases, designing APIs that connect LLMs to proprietary data, and driving the adoption of AI-assisted development practices within engineering teams.\n\nMy stack centers around Python, Node.js, LangChain, LangGraph, and AWS, with a focus on building systems that are not just functional, but reliable, low-latency, and hallucination-resistant.\n\nI care deeply about the full lifecycle of an AI system: from data ingestion and chunking strategy to retrieval quality, prompt design, observability, and production deployment.\n\nCurrently based in Brazil, actively seeking AI Engineer and full-stack opportunities where I can keep building at the frontier of applied AI.",
     "experience": "Experience"
   },
   "certifications": {

@@ -21,7 +21,7 @@
   "about": {
     "title": "Sobre",
     "subtitle": "Trajetória & Experiência",
-    "bio": "Sou um Engenheiro de Software especializado na interseção de IA Generativa e Cloud Architecture. Com base sólida em engenharia de dados, desenvolvimento backend (Python/Node.js) e infraestrutura AWS, foco em projetar sistemas RAG escaláveis, orquestrar LLMs e automatizar fluxos de trabalho complexos.",
+    "bio": "Sou um Engenheiro de Software especializado em sistemas de IA, com foco no design e deploy de pipelines RAG em produção, orquestração de LLMs e workflows multi-agente.\n\nNo último ano, tenho atuado na interseção de IA Generativa e engenharia backend: construindo assistentes inteligentes de suporte ao paciente com RAG e Bancos de Dados Vetoriais, projetando APIs que conectam LLMs a dados proprietários e liderando a adoção de práticas de desenvolvimento assistido por IA em times de engenharia.\n\nMinha stack gira em torno de Python, Node.js, LangChain, LangGraph e AWS, com foco em construir sistemas que não são apenas funcionais, mas confiáveis, de baixa latência e resistentes a alucinações.\n\nMe preocupo profundamente com o ciclo de vida completo de um sistema de IA: desde a ingestão de dados e estratégia de chunking até a qualidade de retrieval, design de prompts, observabilidade e deploy em produção.\n\nAtualmente baseado no Brasil, buscando ativamente oportunidades como AI Engineer e full-stack onde possa continuar construindo na fronteira da IA aplicada.",
     "experience": "Experiência"
   },
   "certifications": {

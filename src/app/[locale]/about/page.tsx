@@ -22,7 +22,11 @@ export default function AboutPage() {
         <h1 className="text-4xl font-bold mb-3">
           <GradientText>{t('title')}</GradientText>
         </h1>
-        <p className="text-slate-400 text-lg leading-relaxed max-w-2xl">{t('bio')}</p>
+        <div className="flex flex-col gap-4 max-w-2xl">
+          {t('bio').split('\n\n').map((paragraph, i) => (
+            <p key={i} className="text-slate-400 text-lg leading-relaxed">{paragraph}</p>
+          ))}
+        </div>
       </motion.div>
 
       {/* Experience */}
