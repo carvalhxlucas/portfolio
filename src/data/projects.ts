@@ -31,7 +31,7 @@ The Supervisor decomposes goals into subtasks and delegates to specialized worke
     summary:
       'Production-ready RAG API with Hybrid Search (Vector + Keyword), Redis caching for cost optimization, and source citations.',
     tags: ['Python', 'FastAPI', 'LangChain', 'RAG', 'Docker', 'Redis'],
-    coverImage: '/images/projects/enterprise-rag-engine.png',
+    coverImage: '/images/projects/enterprise-rag-engine.svg',
     coverImageAlt: 'Enterprise RAG Engine',
     githubUrl: 'https://github.com/carvalhxlucas/enterprise-rag-engine',
     featured: true,
@@ -55,7 +55,7 @@ The Supervisor decomposes goals into subtasks and delegates to specialized worke
     summary:
       'Autonomous agent for monitoring and analyzing market data with LLM-based insights and a modular, pluggable architecture.',
     tags: ['Python', 'LLM', 'Agents', 'Market Data', 'Automation'],
-    coverImage: '/images/projects/market-radar-agent.png',
+    coverImage: '/images/projects/market-radar-agent.svg',
     coverImageAlt: 'Market Radar Agent',
     githubUrl: 'https://github.com/carvalhxlucas/market-radar-agent',
     content: `An autonomous agent that monitors market data sources and generates LLM-powered insights. Built with a modular architecture for pluggable data sources, enabling easy extension to new markets and data providers.`,
@@ -66,10 +66,23 @@ The Supervisor decomposes goals into subtasks and delegates to specialized worke
     summary:
       'AI tool that generates customized technical interview challenges using LangChain, GPT-4o, and a Streamlit interface.',
     tags: ['Python', 'LangChain', 'OpenAI', 'Streamlit', 'AI Engineering'],
-    coverImage: '/images/projects/code-challenge-generator.png',
+    coverImage: '/images/projects/code-challenge-generator.svg',
     coverImageAlt: 'Code Challenge Generator',
     githubUrl: 'https://github.com/carvalhxlucas/code-challenge-generator',
     content: `An AI engineering tool that generates technical interview challenges on demand. Uses LangChain for LLM orchestration and Pydantic V2 for structured output validation. The Streamlit interface allows configuring difficulty, topic, and programming language.`,
+  },
+  {
+    slug: 'tuya-agentic-vacuum',
+    title: 'Tuya Agentic Vacuum',
+    summary:
+      'Control a Tuya-compatible robot vacuum via natural language through Telegram — text or voice — powered by a local AI agent running on Ollama.',
+    tags: ['Python', 'FastAPI', 'Telegram Bot', 'Ollama', 'Tuya IoT', 'AI Agents'],
+    coverImage: '/images/projects/tuya-agentic-vacuum.svg',
+    coverImageAlt: 'Tuya Agentic Vacuum',
+    githubUrl: 'https://github.com/carvalhxlucas/tuya-agentic-vacuum',
+    content: `Built a multi-tier AI agent that bridges Telegram and the Tuya Open Platform API, allowing a robot vacuum to be controlled entirely through natural language. The agent resolves commands using Ollama locally first (recommended model: qwen2.5:3b), falling back to OpenAI and then a regex engine — making it fully operational without cloud AI.
+
+Voice messages are transcribed via OpenAI Whisper before being processed. Supports 7 cleaning modes (smart, random, spiral, wall_follow, mop, left_bow, right_bow) and multilingual commands. Device discovery is handled dynamically through the /devices bot command, removing the need to hardcode device IDs.`,
   },
   {
     slug: 'cryptodash',
