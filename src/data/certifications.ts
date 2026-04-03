@@ -38,4 +38,20 @@ export const certifications: Certification[] = [
       'https://www.credly.com/badges/6a242996-aab4-493e-8c3d-58ef6938808b/public_url',
     description: 'Certification in Machine Learning with Python.',
   },
+  {
+    name: 'Machine Learning Specialization',
+    issuer: 'Stanford University',
+    date: '2024-12-01',
+    badgeUrl: 'https://identity.stanford.edu/wp-content/uploads/sites/3/2020/07/block-s-right.png',
+    credentialUrl: 'https://www.coursera.org/account/accomplishments/specialization/ZWOJF1P8O47T',
+    description: 'Supervised learning, unsupervised learning, and best practices in ML.',
+  },
+  {
+    name: 'Software Engineering Specialization',
+    issuer: 'The Hong Kong University of Science and Technology',
+    date: '2025-10-01',
+    badgeUrl: 'https://upload.wikimedia.org/wikipedia/en/d/d0/The_Hong_Kong_University_of_Science_and_Technology_Logo.svg',
+    credentialUrl: 'https://www.coursera.org/account/accomplishments/specialization/2YHYF38JNKUF',
+    description: 'Core software engineering principles, design patterns, and development practices.',
+  },
 ];
