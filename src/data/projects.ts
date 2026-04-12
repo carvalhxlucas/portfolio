@@ -20,7 +20,6 @@ export const projects: Project[] = [
     coverImage: '/images/projects/agents-swarm.svg',
     coverImageAlt: 'Agents Swarm',
     githubUrl: 'https://github.com/carvalhxlucas/agents-swarm',
-    featured: true,
     content: `Built a Supervisor-Worker orchestrator from scratch using Python 3.11+ and asyncio. Agent communication is done via Redis Pub/Sub, enabling decoupling and horizontal scalability. Shared state can be persisted in PostgreSQL. The HTTP API is exposed with FastAPI for mission creation and tracking.
 
 The Supervisor decomposes goals into subtasks and delegates to specialized workers. Each agent implements a pluggable interface for LLM and search, with timeout handling and error recovery.`,
@@ -46,7 +45,6 @@ The Supervisor decomposes goals into subtasks and delegates to specialized worke
     coverImage: '/images/projects/llm-telemetry-pipeline.svg',
     coverImageAlt: 'LLM Telemetry Pipeline',
     githubUrl: 'https://github.com/carvalhxlucas/llm-telemetry-pipeline',
-    featured: true,
     content: `Engineered a high-throughput observability pipeline for LLM workloads. The architecture handles thousands of telemetry spans per second with sub-100ms latency, using RabbitMQ for buffering and ClickHouse for fast analytical queries.`,
   },
   {
@@ -80,6 +78,7 @@ The Supervisor decomposes goals into subtasks and delegates to specialized worke
     coverImage: '/images/projects/tuya-agentic-vacuum.svg',
     coverImageAlt: 'Tuya Agentic Vacuum',
     githubUrl: 'https://github.com/carvalhxlucas/tuya-agentic-vacuum',
+    featured: true,
     content: `Built a multi-tier AI agent that bridges Telegram and the Tuya Open Platform API, allowing a robot vacuum to be controlled entirely through natural language. The agent resolves commands using Ollama locally first (recommended model: qwen2.5:3b), falling back to OpenAI and then a regex engine — making it fully operational without cloud AI.
 
 Voice messages are transcribed via OpenAI Whisper before being processed. Supports 7 cleaning modes (smart, random, spiral, wall_follow, mop, left_bow, right_bow) and multilingual commands. Device discovery is handled dynamically through the /devices bot command, removing the need to hardcode device IDs.`,
