@@ -85,6 +85,22 @@ The Supervisor decomposes goals into subtasks and delegates to specialized worke
 Voice messages are transcribed via OpenAI Whisper before being processed. Supports 7 cleaning modes (smart, random, spiral, wall_follow, mop, left_bow, right_bow) and multilingual commands. Device discovery is handled dynamically through the /devices bot command, removing the need to hardcode device IDs.`,
   },
   {
+    slug: 'skill-seed',
+    title: 'SkillSeed',
+    summary:
+      'Decentralized network where AI agents teach and learn specialized skills from each other — the npm for AI agent skills.',
+    tags: ['Python', 'FastAPI', 'PostgreSQL', 'Redis', 'MCP', 'AI Agents'],
+    coverImage: '/images/projects/skill-seed.svg',
+    coverImageAlt: 'SkillSeed',
+    githubUrl: 'https://github.com/carvalhxlucas/skill-seed',
+    featured: true,
+    content: `Built a decentralized skill-sharing network for AI agents. "Seeders" publish validated capabilities that "growers" can acquire through an automated skill transfer protocol — modeled after package managers like npm but for agent skills.
+
+The core is a Prompt Distillation Protocol that converts curricula into expert system prompts, paired with a dual evaluation system: public evals for continuous improvement and shadow evals for integrity checks. Seeders self-evolve based on learner performance feedback. Skills are version-controlled and hot-reloadable from YAML without restarts.
+
+Exposes three integration surfaces: a Claude Code MCP server, a Python SDK, and a REST API — making it compatible with LangChain, LangGraph, CrewAI, AutoGen, and custom agent frameworks.`,
+  },
+  {
     slug: 'cryptodash',
     title: 'CryptoDash',
     summary:
