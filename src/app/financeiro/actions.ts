@@ -129,6 +129,13 @@ export async function pagarConta(id: string) {
   } = await supabase.auth.getUser()
   if (!user) redirect('/financeiro/login')
 
+  // Fetch the conta first so we can check if it's recorrente
+  const { data: conta } = await supabase
+    .from('contas')
+    .select('*')
+    .eq('id', id)
+    .single()
+
   const { error } = await supabase
     .from('contas')
     .update({ pago: true, pago_em: new Date().toISOString() })
@@ -136,7 +143,45 @@ export async function pagarConta(id: string) {
 
   if (error) throw new Error(error.message)
 
+  // Auto-generate next month's occurrence for recurring bills
+  if (conta?.recorrente && conta.dia_vencimento) {
+    const [year, month] = conta.vencimento.split('-').map(Number)
+    const nextMonth = month === 12 ? 1 : month + 1
+    const nextYear = month === 12 ? year + 1 : year
+    // Clamp day to last day of next month
+    const lastDay = new Date(nextYear, nextMonth, 0).getDate()
+    const day = Math.min(conta.dia_vencimento, lastDay)
+    const nextVencimento = `${nextYear}-${String(nextMonth).padStart(2, '0')}-${String(day).padStart(2, '0')}`
+
+    // Only create if not already exists (same descricao + vencimento)
+    const { data: existing } = await supabase
+      .from('contas')
+      .select('id')
+      .eq('descricao', conta.descricao)
+      .eq('vencimento', nextVencimento)
+      .eq('pago', false)
+      .maybeSingle()
+
+    if (!existing) {
+      await supabase.from('contas').insert({
+        user_id: conta.user_id,
+        couple_id: conta.couple_id,
+        descricao: conta.descricao,
+        valor: conta.valor,
+        tipo: conta.tipo,
+        categoria: conta.categoria,
+        vencimento: nextVencimento,
+        pago: false,
+        recorrente: true,
+        dia_vencimento: conta.dia_vencimento,
+        pago_por: null,
+      })
+    }
+  }
+
   revalidatePath('/financeiro/contas')
+  revalidatePath('/financeiro')
+  revalidatePath('/financeiro/casal')
 }
 
 export async function despagarConta(id: string) {

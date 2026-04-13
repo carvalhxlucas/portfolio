@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/server'
 import Nav from '../_components/Nav'
+import NovoButton from '../_components/NovoButton'
 import { deletarLancamentoCasal } from '../actions'
 import DeleteButton from '../lancamentos/_components/DeleteButton'
 import type { Lancamento, Couple, Profile, Conta } from '@/types/financeiro'
@@ -101,6 +102,12 @@ export default async function CasalPage() {
   const mesNome = now.toLocaleString('pt-BR', { month: 'long', year: 'numeric' })
   const ultimos5 = lancamentos.slice(0, 5)
 
+  const NOVO_OPTIONS = [
+    { label: 'Lançamento', href: '/financeiro/casal/lancamentos/novo' },
+    { label: 'Conta a pagar/receber', href: '/financeiro/contas/nova?modo=casal' },
+    { label: 'Investimento', href: '/financeiro/investimentos/novo' },
+  ]
+
   // Contas pendentes do casal
   const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`
   const { data: contasData } = await supabase
@@ -125,12 +132,7 @@ export default async function CasalPage() {
             <h1 className="text-2xl font-bold gradient-text">Casal</h1>
             <p className="text-slate-400 text-sm capitalize">{mesNome}</p>
           </div>
-          <Link
-            href="/financeiro/casal/lancamentos/novo"
-            className="bg-violet-600 hover:bg-violet-500 text-sm px-4 py-2 rounded-lg transition-colors"
-          >
-            + Novo
-          </Link>
+          <NovoButton options={NOVO_OPTIONS} />
         </div>
 
         {/* KPIs */}

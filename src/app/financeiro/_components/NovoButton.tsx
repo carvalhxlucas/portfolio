@@ -41,13 +41,13 @@ export default function NovoButton({ options }: { options: Option[] }) {
       </button>
 
       {open && (
-        <div className="absolute right-0 top-full mt-1 w-44 glass rounded-xl shadow-xl z-50 overflow-hidden">
+        <div className="absolute right-0 top-full mt-1 w-48 bg-[#16162a] border border-white/10 rounded-xl shadow-2xl z-50 overflow-hidden">
           {options.map((opt) => (
             <Link
               key={opt.href}
               href={opt.href}
               onClick={() => setOpen(false)}
-              className="block px-4 py-2.5 text-sm text-slate-300 hover:bg-white/10 hover:text-white transition-colors"
+              className="block px-4 py-2.5 text-sm text-slate-300 hover:bg-white/8 hover:text-white transition-colors"
             >
               {opt.label}
             </Link>

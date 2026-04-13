@@ -243,6 +243,11 @@ function ContaItem({
           >
             {conta.tipo === 'pagar' ? 'a pagar' : 'a receber'}
           </span>
+          {conta.recorrente && (
+            <span className="text-xs px-1.5 py-0.5 rounded font-medium bg-violet-500/15 text-violet-400">
+              ↻ mensal
+            </span>
+          )}
         </div>
         <div className="flex items-center gap-2 mt-0.5 flex-wrap">
           <span className="text-xs text-slate-500">{conta.categoria}</span>

@@ -21,6 +21,7 @@ export default function EditarContaForm({ conta, myEmail, partnerEmail }: Props)
   const router = useRouter()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [recorrente, setRecorrente] = useState(conta.recorrente)
 
   const isCasal = !!conta.couple_id
   const myName = myEmail.split('@')[0]
@@ -34,6 +35,9 @@ export default function EditarContaForm({ conta, myEmail, partnerEmail }: Props)
     const fd = new FormData(e.currentTarget)
     const supabase = createClient()
 
+    const vencimento = fd.get('vencimento') as string
+    const diaVencimento = recorrente ? parseInt(vencimento.split('-')[2]) : null
+
     const { error } = await supabase
       .from('contas')
       .update({
@@ -41,8 +45,10 @@ export default function EditarContaForm({ conta, myEmail, partnerEmail }: Props)
         valor: parseFloat(fd.get('valor') as string),
         tipo: fd.get('tipo') as 'pagar' | 'receber',
         categoria: fd.get('categoria') as string,
-        vencimento: fd.get('vencimento') as string,
+        vencimento,
         pago_por: (fd.get('pago_por') as string) || null,
+        recorrente,
+        dia_vencimento: diaVencimento,
       })
       .eq('id', conta.id)
 
@@ -125,6 +131,27 @@ export default function EditarContaForm({ conta, myEmail, partnerEmail }: Props)
             <option value={partnerEmail}>{partnerName}</option>
           </select>
         </div>
+      )}
+
+      {/* Recorrente */}
+      <button
+        type="button"
+        onClick={() => setRecorrente((v) => !v)}
+        className={`w-full flex items-center justify-between px-4 py-3 rounded-lg border transition-colors ${
+          recorrente
+            ? 'border-violet-500/50 bg-violet-600/10 text-violet-300'
+            : 'border-white/10 bg-white/5 text-slate-400 hover:text-white'
+        }`}
+      >
+        <span className="text-sm">Conta recorrente (mensal)</span>
+        <div className={`w-9 h-5 rounded-full transition-colors relative ${recorrente ? 'bg-violet-600' : 'bg-white/10'}`}>
+          <div className={`w-3.5 h-3.5 bg-white rounded-full absolute top-0.5 transition-transform ${recorrente ? 'translate-x-4' : 'translate-x-0.5'}`} />
+        </div>
+      </button>
+      {recorrente && (
+        <p className="text-xs text-slate-500 -mt-2">
+          Ao pagar, a próxima ocorrência será criada automaticamente no mesmo dia do mês seguinte.
+        </p>
       )}
 
       {error && <p className="text-red-400 text-xs">{error}</p>}

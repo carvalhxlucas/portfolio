@@ -77,6 +77,8 @@ export type Conta = {
   pago: boolean
   pago_em: string | null
   pago_por: string | null
+  recorrente: boolean
+  dia_vencimento: number | null
   created_at: string
 }
 
