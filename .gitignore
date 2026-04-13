@@ -17,3 +17,14 @@ dist/
 *.bak
 
 CLAUDE.md
+
+# TypeScript build info
+tsconfig.tsbuildinfo
+
+# Local MCP config
+.mcp.json
+
+# Environment variables — NEVER commit
+.env
+.env.local
+.env*.local
