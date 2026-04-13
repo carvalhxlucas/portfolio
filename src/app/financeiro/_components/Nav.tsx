@@ -1,5 +1,7 @@
 import Link from 'next/link'
+import { createClient } from '@/lib/supabase/server'
 import { logout } from '../actions'
+import NotificacoesButton, { type Notificacao } from './NotificacoesButton'
 
 type Tab = 'individual' | 'casal' | 'contas' | 'resumo' | 'configuracoes'
 
@@ -9,7 +11,29 @@ const TABS = [
   { key: 'resumo', href: '/financeiro/resumo', label: 'Resumo' },
 ] as const
 
-export default function Nav({ active }: { active: Tab }) {
+export default async function Nav({ active }: { active: Tab }) {
+  const supabase = await createClient()
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
+
+  let notificacoes: Notificacao[] = []
+
+  if (user) {
+    const now = new Date()
+    const in5Days = new Date(now.getTime() + 5 * 24 * 60 * 60 * 1000)
+    const deadline = `${in5Days.getFullYear()}-${String(in5Days.getMonth() + 1).padStart(2, '0')}-${String(in5Days.getDate()).padStart(2, '0')}`
+
+    const { data } = await supabase
+      .from('contas')
+      .select('id, descricao, valor, tipo, vencimento, couple_id')
+      .eq('pago', false)
+      .lte('vencimento', deadline)
+      .order('vencimento', { ascending: true })
+
+    notificacoes = (data ?? []) as Notificacao[]
+  }
+
   return (
     <header className="border-b border-white/5 mb-8">
       <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
@@ -29,6 +53,7 @@ export default function Nav({ active }: { active: Tab }) {
           ))}
         </nav>
         <div className="flex items-center gap-3">
+          <NotificacoesButton notificacoes={notificacoes} />
           <Link
             href="/financeiro/configuracoes"
             className={`text-sm transition-colors ${
