@@ -40,6 +40,7 @@ export default function ResumoPage() {
     supabase
       .from('lancamentos')
       .select('*')
+      .is('couple_id', null)
       .gte('data', `${year}-${month}-01`)
       .lte('data', `${year}-${month}-31`)
       .then(({ data }) => {

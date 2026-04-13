@@ -2,7 +2,7 @@
 
 import { useTransition } from 'react'
 
-export default function DeleteButton({
+export default function DeleteInvestimentoButton({
   id,
   action,
 }: {
@@ -12,7 +12,7 @@ export default function DeleteButton({
   const [pending, startTransition] = useTransition()
 
   function handleDelete() {
-    if (!confirm('Deletar este lançamento?')) return
+    if (!confirm('Deletar este investimento?')) return
     startTransition(() => action(id))
   }
 
