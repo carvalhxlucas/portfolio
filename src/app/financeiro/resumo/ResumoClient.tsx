@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useMemo } from 'react'
 import { createClient } from '@/lib/supabase/client'
+import MesSeletorButton from '../_components/MesSeletorButton'
 import type { Lancamento } from '@/types/financeiro'
 
 // ─── Paleta ────────────────────────────────────────────────────────────────────
@@ -156,11 +157,10 @@ export default function ResumoClient({ coupleId, myEmail, partnerEmail }: Props)
             </div>
           )}
           {/* Filtro de mês */}
-          <input
-            type="month"
-            value={mes}
-            onChange={(e) => setMes(e.target.value)}
-            className="bg-white/5 border border-white/10 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:border-violet-500/50 transition-colors"
+          <MesSeletorButton
+            mes={parseInt(mes.split('-')[1])}
+            ano={parseInt(mes.split('-')[0])}
+            onSelect={(m, a) => setMes(`${a}-${String(m).padStart(2, '0')}`)}
           />
         </div>
       </div>

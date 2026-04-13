@@ -6,14 +6,21 @@ import type { Conta, Couple, Profile } from '@/types/financeiro'
 export default async function ContasPage({
   searchParams,
 }: {
-  searchParams: Promise<{ modo?: string }>
+  searchParams: Promise<{ modo?: string; mes?: string; ano?: string }>
 }) {
-  const { modo } = await searchParams
+  const { modo, mes, ano } = await searchParams
   const supabase = await createClient()
   const {
     data: { user },
   } = await supabase.auth.getUser()
   if (!user) return null
+
+  const now = new Date()
+  const year = ano ? parseInt(ano) : now.getFullYear()
+  const month = mes ? parseInt(mes) : now.getMonth() + 1
+  const lastDay = new Date(year, month, 0).getDate()
+  const startDate = `${year}-${String(month).padStart(2, '0')}-01`
+  const endDate = `${year}-${String(month).padStart(2, '0')}-${String(lastDay).padStart(2, '0')}`
 
   // Couple
   const { data: coupleData } = await supabase
@@ -34,19 +41,23 @@ export default async function ContasPage({
     partnerEmail = (p as Pick<Profile, 'email'> | null)?.email ?? null
   }
 
-  // Contas individuais
+  // Contas individuais do mês
   const { data: individuais } = await supabase
     .from('contas')
     .select('*')
     .is('couple_id', null)
+    .gte('vencimento', startDate)
+    .lte('vencimento', endDate)
     .order('vencimento', { ascending: true })
 
-  // Contas do casal
+  // Contas do casal do mês
   const { data: casal } = couple
     ? await supabase
         .from('contas')
         .select('*')
         .eq('couple_id', couple.id)
+        .gte('vencimento', startDate)
+        .lte('vencimento', endDate)
         .order('vencimento', { ascending: true })
     : { data: null }
 
@@ -61,6 +72,8 @@ export default async function ContasPage({
           myEmail={user.email!}
           partnerEmail={partnerEmail}
           defaultMode={modo === 'casal' && couple ? 'casal' : 'individual'}
+          mes={month}
+          ano={year}
         />
       </div>
     </>

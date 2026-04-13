@@ -2,20 +2,26 @@ import Link from 'next/link'
 import { createClient } from '@/lib/supabase/server'
 import Nav from './_components/Nav'
 import NovoButton from './_components/NovoButton'
+import MesSeletorButton from './_components/MesSeletorButton'
 import ObservacaoIcon from './_components/ObservacaoIcon'
 import { deletarLancamento } from './actions'
 import DeleteButton from './lancamentos/_components/DeleteButton'
 import type { Lancamento, Conta, Investimento } from '@/types/financeiro'
 
-export default async function DashboardPage() {
+export default async function DashboardPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ mes?: string; ano?: string }>
+}) {
+  const { mes, ano } = await searchParams
   const supabase = await createClient()
   const {
     data: { user },
   } = await supabase.auth.getUser()
 
   const now = new Date()
-  const year = now.getFullYear()
-  const month = now.getMonth() + 1
+  const year = ano ? parseInt(ano) : now.getFullYear()
+  const month = mes ? parseInt(mes) : now.getMonth() + 1
   const lastDay = new Date(year, month, 0).getDate()
   const startDate = `${year}-${String(month).padStart(2, '0')}-01`
   const endDate = `${year}-${String(month).padStart(2, '0')}-${String(lastDay).padStart(2, '0')}`
@@ -75,11 +81,11 @@ export default async function DashboardPage() {
       <Nav active="individual" />
       <div className="max-w-4xl mx-auto px-4 pb-8">
         <div className="flex items-center justify-between mb-8">
-          <div>
-            <h1 className="text-2xl font-bold gradient-text">Individual</h1>
-            <p className="text-slate-400 text-sm capitalize">{mesNome}</p>
+          <h1 className="text-2xl font-bold gradient-text">Individual</h1>
+          <div className="flex items-center gap-2">
+            <MesSeletorButton mes={month} ano={year} />
+            <NovoButton options={NOVO_OPTIONS} />
           </div>
-          <NovoButton options={NOVO_OPTIONS} />
         </div>
 
         {/* ── Lançamentos ─────────────────────────────────────────────── */}

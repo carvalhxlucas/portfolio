@@ -1,17 +1,30 @@
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/server'
 import Nav from '../_components/Nav'
+import MesSeletorButton from '../_components/MesSeletorButton'
 import DeleteInvestimentoButton from './_components/DeleteInvestimentoButton'
 import ObservacaoIcon from '../_components/ObservacaoIcon'
 import { deletarInvestimento } from '../actions'
 import type { Investimento, Couple } from '@/types/financeiro'
 
-export default async function InvestimentosPage() {
+export default async function InvestimentosPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ mes?: string; ano?: string }>
+}) {
+  const { mes, ano } = await searchParams
   const supabase = await createClient()
   const {
     data: { user },
   } = await supabase.auth.getUser()
   if (!user) return null
+
+  const now = new Date()
+  const year = ano ? parseInt(ano) : now.getFullYear()
+  const month = mes ? parseInt(mes) : now.getMonth() + 1
+  const lastDay = new Date(year, month, 0).getDate()
+  const startDate = `${year}-${String(month).padStart(2, '0')}-01`
+  const endDate = `${year}-${String(month).padStart(2, '0')}-${String(lastDay).padStart(2, '0')}`
 
   const { data: coupleData } = await supabase
     .from('couples')
@@ -20,12 +33,23 @@ export default async function InvestimentosPage() {
     .single()
   const couple = coupleData as Pick<Couple, 'id'> | null
 
-  const { data } = await supabase
+  // All-time investments for patrimônio/category breakdown
+  const { data: allData } = await supabase
     .from('investimentos')
     .select('*')
     .order('data', { ascending: false })
 
-  const investimentos = (data ?? []) as Investimento[]
+  const investimentos = (allData ?? []) as Investimento[]
+
+  // Month-filtered for history list
+  const { data: monthData } = await supabase
+    .from('investimentos')
+    .select('*')
+    .gte('data', startDate)
+    .lte('data', endDate)
+    .order('data', { ascending: false })
+
+  const investimentosMes = (monthData ?? []) as Investimento[]
 
   // Separar individual e casal
   const individuais = investimentos.filter((i) => !i.couple_id)
@@ -72,12 +96,15 @@ export default async function InvestimentosPage() {
             <h1 className="text-2xl font-bold gradient-text">Investimentos</h1>
             <p className="text-slate-400 text-sm">Carteira consolidada</p>
           </div>
-          <Link
-            href="/financeiro/investimentos/novo"
-            className="bg-violet-600 hover:bg-violet-500 text-sm px-4 py-2 rounded-lg transition-colors"
-          >
-            + Novo
-          </Link>
+          <div className="flex items-center gap-3">
+            <MesSeletorButton mes={month} ano={year} />
+            <Link
+              href="/financeiro/investimentos/novo"
+              className="bg-violet-600 hover:bg-violet-500 text-sm px-4 py-2 rounded-lg transition-colors"
+            >
+              + Novo
+            </Link>
+          </div>
         </div>
 
         {/* Patrimônio total */}
@@ -129,25 +156,25 @@ export default async function InvestimentosPage() {
         {/* Lista de transações */}
         <div className="glass rounded-2xl overflow-hidden">
           <div className="px-6 py-4 border-b border-white/5">
-            <h2 className="text-sm font-medium text-slate-300">Histórico</h2>
+            <h2 className="text-sm font-medium text-slate-300">Histórico do mês</h2>
           </div>
-          {investimentos.length === 0 ? (
+          {investimentosMes.length === 0 ? (
             <div className="py-12 text-center">
-              <p className="text-sm text-slate-500">Nenhum investimento registrado.</p>
+              <p className="text-sm text-slate-500">Nenhum investimento neste mês.</p>
               <Link
                 href="/financeiro/investimentos/novo"
                 className="text-violet-400 text-sm hover:underline mt-2 inline-block"
               >
-                Registrar primeiro
+                Registrar
               </Link>
             </div>
           ) : (
             <ul>
-              {investimentos.map((inv, i) => (
+              {investimentosMes.map((inv, i) => (
                 <li
                   key={inv.id}
                   className={`flex items-center justify-between px-5 py-4 ${
-                    i < investimentos.length - 1 ? 'border-b border-white/5' : ''
+                    i < investimentosMes.length - 1 ? 'border-b border-white/5' : ''
                   }`}
                 >
                   <div className="flex-1 min-w-0">

@@ -4,6 +4,7 @@ import { useState, useMemo, useTransition } from 'react'
 import Link from 'next/link'
 import { pagarConta, despagarConta, deletarConta } from '../actions'
 import ObservacaoIcon from '../_components/ObservacaoIcon'
+import MesSeletorButton from '../_components/MesSeletorButton'
 import type { Conta } from '@/types/financeiro'
 
 type Mode = 'individual' | 'casal'
@@ -16,6 +17,8 @@ type Props = {
   myEmail: string
   partnerEmail: string | null
   defaultMode: Mode
+  mes: number
+  ano: number
 }
 
 export default function ContasClient({
@@ -25,6 +28,8 @@ export default function ContasClient({
   myEmail,
   partnerEmail,
   defaultMode,
+  mes,
+  ano,
 }: Props) {
   const [mode, setMode] = useState<Mode>(defaultMode)
   const [filtro, setFiltro] = useState<Filtro>('todas')
@@ -73,6 +78,7 @@ export default function ContasClient({
           <p className="text-slate-400 text-sm">A pagar e a receber</p>
         </div>
         <div className="flex items-center gap-3">
+          <MesSeletorButton mes={mes} ano={ano} />
           {coupleId && (
             <div className="flex bg-white/5 rounded-lg p-1 gap-1">
               {(['individual', 'casal'] as Mode[]).map((m) => (
