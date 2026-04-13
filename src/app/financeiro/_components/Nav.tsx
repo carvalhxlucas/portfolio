@@ -1,12 +1,13 @@
 import Link from 'next/link'
 import { logout } from '../actions'
 
-type Tab = 'individual' | 'casal' | 'investimentos' | 'configuracoes'
+type Tab = 'individual' | 'casal' | 'investimentos' | 'resumo' | 'configuracoes'
 
 const TABS = [
   { key: 'individual', href: '/financeiro', label: 'Individual' },
   { key: 'casal', href: '/financeiro/casal', label: 'Casal' },
   { key: 'investimentos', href: '/financeiro/investimentos', label: 'Investimentos' },
+  { key: 'resumo', href: '/financeiro/resumo', label: 'Resumo' },
 ] as const
 
 export default function Nav({ active }: { active: Tab }) {
