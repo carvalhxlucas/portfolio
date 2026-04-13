@@ -6,9 +6,9 @@ import NotificacoesButton, { type Notificacao } from './NotificacoesButton'
 type Tab = 'individual' | 'casal' | 'contas' | 'resumo' | 'configuracoes'
 
 const TABS = [
+  { key: 'resumo', href: '/financeiro/resumo', label: 'Resumo' },
   { key: 'individual', href: '/financeiro', label: 'Individual' },
   { key: 'casal', href: '/financeiro/casal', label: 'Casal' },
-  { key: 'resumo', href: '/financeiro/resumo', label: 'Resumo' },
 ] as const
 
 export default async function Nav({ active }: { active: Tab }) {

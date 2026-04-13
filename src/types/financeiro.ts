@@ -10,6 +10,7 @@ export type Lancamento = {
   pago_por: string | null
   dividir: boolean
   divisao_percentual: number
+  observacao: string | null
   created_at: string
 }
 
@@ -22,6 +23,7 @@ export type Investimento = {
   tipo: 'aporte' | 'resgate' | 'rendimento'
   categoria: string
   data: string
+  observacao: string | null
   created_at: string
 }
 
@@ -81,6 +83,7 @@ export type Conta = {
   pago_por: string | null
   recorrente: boolean
   dia_vencimento: number | null
+  observacao: string | null
   created_at: string
 }
 

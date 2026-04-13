@@ -3,6 +3,7 @@ import { createClient } from '@/lib/supabase/server'
 import Nav from '../_components/Nav'
 import NovoButton from '../_components/NovoButton'
 import AcertoButton from './_components/AcertoButton'
+import ObservacaoIcon from '../_components/ObservacaoIcon'
 import { deletarLancamentoCasal } from '../actions'
 import DeleteButton from '../lancamentos/_components/DeleteButton'
 import type { Lancamento, Couple, Profile, Conta } from '@/types/financeiro'
@@ -315,6 +316,7 @@ export default async function CasalPage() {
                       {l.tipo === 'acerto' ? '⇄ ' : l.tipo === 'receita' ? '+' : '-'}
                       {fmt(Number(l.valor))}
                     </span>
+                    <ObservacaoIcon observacao={l.observacao} />
                     <Link
                       href={`/financeiro/casal/lancamentos/${l.id}/editar`}
                       className="text-xs text-slate-500 hover:text-violet-400 transition-colors"

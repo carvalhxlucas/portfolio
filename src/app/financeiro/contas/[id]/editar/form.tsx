@@ -49,6 +49,7 @@ export default function EditarContaForm({ conta, myEmail, partnerEmail }: Props)
         pago_por: (fd.get('pago_por') as string) || null,
         recorrente,
         dia_vencimento: diaVencimento,
+        observacao: (fd.get('observacao') as string) || null,
       })
       .eq('id', conta.id)
 
@@ -132,6 +133,19 @@ export default function EditarContaForm({ conta, myEmail, partnerEmail }: Props)
           </select>
         </div>
       )}
+
+      <div>
+        <label className="block text-xs text-slate-400 mb-1.5">
+          Observação <span className="text-slate-600">(opcional)</span>
+        </label>
+        <textarea
+          name="observacao"
+          rows={2}
+          placeholder="Adicione uma observação..."
+          defaultValue={conta.observacao ?? ''}
+          className={INPUT_CLS + ' resize-none'}
+        />
+      </div>
 
       {/* Recorrente */}
       <button

@@ -47,6 +47,7 @@ export default function NovoInvestimentoForm({ coupleId }: Props) {
       tipo: fd.get('tipo') as 'aporte' | 'resgate' | 'rendimento',
       categoria: fd.get('categoria') as string,
       data: fd.get('data') as string,
+      observacao: (fd.get('observacao') as string) || null,
     })
 
     if (error) {
@@ -157,6 +158,18 @@ export default function NovoInvestimentoForm({ coupleId }: Props) {
               className={INPUT_CLS}
             />
           </div>
+        </div>
+
+        <div>
+          <label className="block text-xs text-slate-400 mb-1.5">
+            Observação <span className="text-slate-600">(opcional)</span>
+          </label>
+          <textarea
+            name="observacao"
+            rows={2}
+            placeholder="Adicione uma observação..."
+            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/30 transition-colors resize-none"
+          />
         </div>
 
         {error && <p className="text-red-400 text-xs">{error}</p>}

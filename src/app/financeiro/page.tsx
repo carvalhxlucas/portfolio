@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { createClient } from '@/lib/supabase/server'
 import Nav from './_components/Nav'
 import NovoButton from './_components/NovoButton'
+import ObservacaoIcon from './_components/ObservacaoIcon'
 import { deletarLancamento } from './actions'
 import DeleteButton from './lancamentos/_components/DeleteButton'
 import type { Lancamento, Conta, Investimento } from '@/types/financeiro'
@@ -138,6 +139,7 @@ export default async function DashboardPage() {
                         {l.tipo === 'receita' ? '+' : '-'}
                         {fmt(Number(l.valor))}
                       </span>
+                      <ObservacaoIcon observacao={l.observacao} />
                       <Link
                         href={`/financeiro/lancamentos/${l.id}/editar`}
                         className="text-xs text-slate-500 hover:text-violet-400 transition-colors"

@@ -33,6 +33,7 @@ export default function EditarLancamentoForm({ lancamento }: { lancamento: Lanca
         categoria: fd.get('categoria') as string,
         data: fd.get('data') as string,
         pago_por: (fd.get('pago_por') as string) || null,
+        observacao: (fd.get('observacao') as string) || null,
       })
       .eq('id', lancamento.id)
 
@@ -113,6 +114,19 @@ export default function EditarLancamentoForm({ lancamento }: { lancamento: Lanca
           type="text"
           defaultValue={lancamento.pago_por ?? ''}
           className={INPUT_CLS}
+        />
+      </div>
+
+      <div>
+        <label className="block text-xs text-slate-400 mb-1.5">
+          Observação <span className="text-slate-600">(opcional)</span>
+        </label>
+        <textarea
+          name="observacao"
+          rows={2}
+          placeholder="Adicione uma observação..."
+          defaultValue={lancamento.observacao ?? ''}
+          className={INPUT_CLS + ' resize-none'}
         />
       </div>
 

@@ -54,6 +54,7 @@ export default function EditarLancamentoCasalForm({ lancamento, myEmail, partner
         pago_por: pagoPor,
         dividir: tipo === 'despesa' ? dividir : false,
         divisao_percentual: tipo === 'despesa' && dividir ? divisaoPct : 100,
+        observacao: (fd.get('observacao') as string) || null,
       })
       .eq('id', lancamento.id)
 
@@ -219,6 +220,19 @@ export default function EditarLancamentoCasalForm({ lancamento, myEmail, partner
           )}
         </div>
       )}
+
+      <div>
+        <label className="block text-xs text-slate-400 mb-1.5">
+          Observação <span className="text-slate-600">(opcional)</span>
+        </label>
+        <textarea
+          name="observacao"
+          rows={2}
+          placeholder="Adicione uma observação..."
+          defaultValue={lancamento.observacao ?? ''}
+          className={INPUT_CLS + ' resize-none'}
+        />
+      </div>
 
       {error && <p className="text-red-400 text-xs">{error}</p>}
 

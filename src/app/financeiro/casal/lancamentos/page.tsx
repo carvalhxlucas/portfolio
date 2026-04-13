@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/server'
 import DeleteButton from '../../lancamentos/_components/DeleteButton'
+import ObservacaoIcon from '../../_components/ObservacaoIcon'
 import { deletarLancamentoCasal } from '../../actions'
 import type { Lancamento, Couple } from '@/types/financeiro'
 
@@ -152,7 +153,8 @@ export default async function CasalLancamentosPage({
                     {l.tipo === 'receita' ? '+' : '-'}
                     {fmt(Number(l.valor))}
                   </span>
-                  <div className="flex gap-3">
+                  <div className="flex items-center gap-3">
+                    <ObservacaoIcon observacao={l.observacao} />
                     <Link
                       href={`/financeiro/casal/lancamentos/${l.id}/editar`}
                       className="text-xs text-slate-500 hover:text-violet-400 transition-colors"

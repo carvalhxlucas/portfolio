@@ -3,6 +3,7 @@
 import { useState, useMemo, useTransition } from 'react'
 import Link from 'next/link'
 import { pagarConta, despagarConta, deletarConta } from '../actions'
+import ObservacaoIcon from '../_components/ObservacaoIcon'
 import type { Conta } from '@/types/financeiro'
 
 type Mode = 'individual' | 'casal'
@@ -289,7 +290,8 @@ function ContaItem({
         }`}>
           {conta.tipo === 'pagar' ? '-' : '+'}{fmt(Number(conta.valor))}
         </span>
-        <div className="flex gap-3">
+        <div className="flex items-center gap-3">
+          <ObservacaoIcon observacao={conta.observacao} />
           <Link
             href={`/financeiro/contas/${conta.id}/editar`}
             className="text-xs text-slate-500 hover:text-violet-400 transition-colors"

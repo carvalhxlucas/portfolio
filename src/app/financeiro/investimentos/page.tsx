@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { createClient } from '@/lib/supabase/server'
 import Nav from '../_components/Nav'
 import DeleteInvestimentoButton from './_components/DeleteInvestimentoButton'
+import ObservacaoIcon from '../_components/ObservacaoIcon'
 import { deletarInvestimento } from '../actions'
 import type { Investimento, Couple } from '@/types/financeiro'
 
@@ -176,6 +177,7 @@ export default async function InvestimentosPage() {
                       {fmt(Number(inv.valor))}
                     </span>
                     <span className="text-xs text-slate-600 capitalize">{inv.tipo}</span>
+                    <ObservacaoIcon observacao={inv.observacao} />
                     <DeleteInvestimentoButton id={inv.id} action={deletarInvestimento} />
                   </div>
                 </li>
