@@ -63,8 +63,9 @@ export default async function CasalPage() {
   const now = new Date()
   const year = now.getFullYear()
   const month = now.getMonth() + 1
+  const lastDay = new Date(year, month, 0).getDate()
   const startDate = `${year}-${String(month).padStart(2, '0')}-01`
-  const endDate = `${year}-${String(month).padStart(2, '0')}-31`
+  const endDate = `${year}-${String(month).padStart(2, '0')}-${String(lastDay).padStart(2, '0')}`
 
   const { data } = await supabase
     .from('lancamentos')

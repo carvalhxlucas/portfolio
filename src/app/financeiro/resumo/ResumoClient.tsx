@@ -38,12 +38,13 @@ export default function ResumoClient({ coupleId, myEmail, partnerEmail }: Props)
     setLoading(true)
     const supabase = createClient()
     const [year, month] = mes.split('-')
+    const lastDay = new Date(parseInt(year), parseInt(month), 0).getDate()
 
     let query = supabase
       .from('lancamentos')
       .select('*')
       .gte('data', `${year}-${month}-01`)
-      .lte('data', `${year}-${month}-31`)
+      .lte('data', `${year}-${month}-${String(lastDay).padStart(2, '0')}`)
 
     if (mode === 'individual') {
       query = query.is('couple_id', null)
