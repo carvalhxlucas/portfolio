@@ -120,6 +120,56 @@ export async function vincularCasal(
   return null
 }
 
+// ─── Contas a pagar / receber ─────────────────────────────────────────────────
+
+export async function pagarConta(id: string) {
+  const supabase = await createClient()
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
+  if (!user) redirect('/financeiro/login')
+
+  const { error } = await supabase
+    .from('contas')
+    .update({ pago: true, pago_em: new Date().toISOString() })
+    .eq('id', id)
+
+  if (error) throw new Error(error.message)
+
+  revalidatePath('/financeiro/contas')
+}
+
+export async function despagarConta(id: string) {
+  const supabase = await createClient()
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
+  if (!user) redirect('/financeiro/login')
+
+  const { error } = await supabase
+    .from('contas')
+    .update({ pago: false, pago_em: null })
+    .eq('id', id)
+
+  if (error) throw new Error(error.message)
+
+  revalidatePath('/financeiro/contas')
+}
+
+export async function deletarConta(id: string) {
+  const supabase = await createClient()
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
+  if (!user) redirect('/financeiro/login')
+
+  const { error } = await supabase.from('contas').delete().eq('id', id)
+
+  if (error) throw new Error(error.message)
+
+  revalidatePath('/financeiro/contas')
+}
+
 export async function desvincularCasal(coupleId: string) {
   const supabase = await createClient()
   await supabase.from('couples').delete().eq('id', coupleId)

@@ -65,5 +65,20 @@ export const CATEGORIAS_INVESTIMENTO = [
   'Outros',
 ] as const
 
+export type Conta = {
+  id: string
+  user_id: string | null
+  couple_id: string | null
+  descricao: string
+  valor: number
+  tipo: 'pagar' | 'receber'
+  categoria: string
+  vencimento: string
+  pago: boolean
+  pago_em: string | null
+  pago_por: string | null
+  created_at: string
+}
+
 export type Categoria = (typeof CATEGORIAS)[number]
 export type CategoriaInvestimento = (typeof CATEGORIAS_INVESTIMENTO)[number]
