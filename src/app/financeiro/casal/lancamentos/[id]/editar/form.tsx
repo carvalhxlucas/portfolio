@@ -204,11 +204,11 @@ export default function EditarLancamentoCasalForm({ lancamento, myEmail, partner
                 <label className="text-xs text-slate-500 capitalize shrink-0">{pagadorNome}:</label>
                 <input
                   type="number"
-                  min={1}
-                  max={99}
+                  min={0}
+                  max={100}
                   value={divisaoPct}
                   onChange={(e) => {
-                    const v = Math.min(99, Math.max(1, parseInt(e.target.value) || 1))
+                    const v = Math.min(100, Math.max(0, parseInt(e.target.value) || 0))
                     setDivisaoPct(v)
                   }}
                   className="w-16 bg-white/5 border border-white/10 rounded-lg px-2 py-1 text-sm text-center focus:outline-none focus:border-violet-500/50"
