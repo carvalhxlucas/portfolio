@@ -129,31 +129,60 @@ export async function pagarConta(id: string) {
   } = await supabase.auth.getUser()
   if (!user) redirect('/financeiro/login')
 
-  // Fetch the conta first so we can check if it's recorrente
   const { data: conta } = await supabase
     .from('contas')
     .select('*')
     .eq('id', id)
     .single()
 
+  if (!conta) throw new Error('Conta não encontrada')
+
+  const today = new Date().toISOString().split('T')[0]
+  const tipoLancamento = conta.tipo === 'pagar' ? 'despesa' : 'receita'
+  const isCasal = !!conta.couple_id
+
+  // Cria o lançamento correspondente
+  const { data: lancamento, error: lancErr } = await supabase
+    .from('lancamentos')
+    .insert({
+      user_id: isCasal ? null : user.id,
+      couple_id: conta.couple_id ?? null,
+      descricao: conta.descricao,
+      valor: conta.valor,
+      tipo: tipoLancamento,
+      categoria: conta.categoria,
+      data: today,
+      pago_por: conta.pago_por ?? (isCasal ? user.email : null),
+      dividir: isCasal,
+      divisao_percentual: 50,
+      observacao: conta.observacao,
+    })
+    .select('id')
+    .single()
+
+  if (lancErr) throw new Error(lancErr.message)
+
+  // Marca como pago e guarda referência ao lançamento criado
   const { error } = await supabase
     .from('contas')
-    .update({ pago: true, pago_em: new Date().toISOString() })
+    .update({
+      pago: true,
+      pago_em: new Date().toISOString(),
+      lancamento_id: lancamento.id,
+    })
     .eq('id', id)
 
   if (error) throw new Error(error.message)
 
-  // Auto-generate next month's occurrence for recurring bills
-  if (conta?.recorrente && conta.dia_vencimento) {
+  // Auto-gera próxima ocorrência para contas recorrentes
+  if (conta.recorrente && conta.dia_vencimento) {
     const [year, month] = conta.vencimento.split('-').map(Number)
     const nextMonth = month === 12 ? 1 : month + 1
     const nextYear = month === 12 ? year + 1 : year
-    // Clamp day to last day of next month
     const lastDay = new Date(nextYear, nextMonth, 0).getDate()
     const day = Math.min(conta.dia_vencimento, lastDay)
     const nextVencimento = `${nextYear}-${String(nextMonth).padStart(2, '0')}-${String(day).padStart(2, '0')}`
 
-    // Only create if not already exists (same descricao + vencimento)
     const { data: existing } = await supabase
       .from('contas')
       .select('id')
@@ -182,6 +211,8 @@ export async function pagarConta(id: string) {
   revalidatePath('/financeiro/contas')
   revalidatePath('/financeiro')
   revalidatePath('/financeiro/casal')
+  revalidatePath('/financeiro/lancamentos')
+  revalidatePath('/financeiro/casal/lancamentos')
 }
 
 export async function despagarConta(id: string) {
@@ -191,14 +222,30 @@ export async function despagarConta(id: string) {
   } = await supabase.auth.getUser()
   if (!user) redirect('/financeiro/login')
 
+  // Busca o lancamento_id antes de atualizar
+  const { data: conta } = await supabase
+    .from('contas')
+    .select('lancamento_id')
+    .eq('id', id)
+    .single()
+
+  // Remove o lançamento gerado automaticamente, se existir
+  if (conta?.lancamento_id) {
+    await supabase.from('lancamentos').delete().eq('id', conta.lancamento_id)
+  }
+
   const { error } = await supabase
     .from('contas')
-    .update({ pago: false, pago_em: null })
+    .update({ pago: false, pago_em: null, lancamento_id: null })
     .eq('id', id)
 
   if (error) throw new Error(error.message)
 
   revalidatePath('/financeiro/contas')
+  revalidatePath('/financeiro')
+  revalidatePath('/financeiro/casal')
+  revalidatePath('/financeiro/lancamentos')
+  revalidatePath('/financeiro/casal/lancamentos')
 }
 
 export async function deletarConta(id: string) {

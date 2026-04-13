@@ -84,6 +84,7 @@ export type Conta = {
   recorrente: boolean
   dia_vencimento: number | null
   observacao: string | null
+  lancamento_id: string | null
   created_at: string
 }
 
