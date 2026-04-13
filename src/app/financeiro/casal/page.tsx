@@ -97,8 +97,18 @@ export default async function CasalPage() {
     .filter((l) => l.pago_por === partnerEmail)
     .reduce((acc, l) => acc + Number(l.valor), 0)
   const totalDespesas = pagueiEu + pagueiParceiro
-  const metade = totalDespesas / 2
-  const diferenca = pagueiEu - metade
+
+  // Saldo baseado na divisão configurada em cada lançamento
+  // divisao_percentual = % de responsabilidade do pago_por
+  // outroShare = o que o outro deve pagar
+  let saldoBase = 0
+  for (const l of despesasCasal) {
+    if (!l.dividir) continue
+    const divisao = (l.divisao_percentual ?? 50) / 100
+    const outroShare = Number(l.valor) * (1 - divisao)
+    if (l.pago_por === meEmail) saldoBase += outroShare      // parceiro me deve
+    else if (l.pago_por === partnerEmail) saldoBase -= outroShare // eu devo ao parceiro
+  }
 
   // Acertos do mês: descontam do saldo devedor
   const acertosCasal = lancamentos.filter((l) => l.tipo === 'acerto')
@@ -108,7 +118,7 @@ export default async function CasalPage() {
   const acertoParceiroPraMim = acertosCasal
     .filter((l) => l.pago_por === partnerEmail)
     .reduce((acc, l) => acc + Number(l.valor), 0)
-  const diferencaAjustada = diferenca + acertoEuParaParceiro - acertoParceiroPraMim
+  const diferencaAjustada = saldoBase + acertoEuParaParceiro - acertoParceiroPraMim
 
   const mesNome = now.toLocaleString('pt-BR', { month: 'long', year: 'numeric' })
   const ultimos5 = lancamentos.slice(0, 5)
@@ -181,7 +191,7 @@ export default async function CasalPage() {
             <div className={`rounded-xl p-4 ${Math.abs(diferencaAjustada) < 0.01 ? 'bg-emerald-500/10 border border-emerald-500/20' : 'bg-amber-500/10 border border-amber-500/20'}`}>
               {Math.abs(diferencaAjustada) < 0.01 ? (
                 <p className="text-sm text-emerald-400 text-center font-medium">
-                  Estão quites! Cada um pagou {fmt(metade)}
+                  Estão quites!
                 </p>
               ) : diferencaAjustada > 0 ? (
                 <>

@@ -8,6 +8,8 @@ export type Lancamento = {
   categoria: string
   data: string
   pago_por: string | null
+  dividir: boolean
+  divisao_percentual: number
   created_at: string
 }
 

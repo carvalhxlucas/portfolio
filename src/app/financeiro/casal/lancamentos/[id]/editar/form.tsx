@@ -11,6 +11,8 @@ const INPUT_CLS =
 const SELECT_CLS =
   'w-full bg-[#0d0d1a] border border-white/10 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/30 transition-colors'
 
+const PRESETS = [50, 60, 70]
+
 type Props = {
   lancamento: Lancamento
   myEmail: string
@@ -21,9 +23,17 @@ export default function EditarLancamentoCasalForm({ lancamento, myEmail, partner
   const router = useRouter()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [tipo, setTipo] = useState<'receita' | 'despesa'>(
+    lancamento.tipo === 'acerto' ? 'despesa' : lancamento.tipo
+  )
+  const [pagoPor, setPagoPor] = useState(lancamento.pago_por ?? myEmail)
+  const [dividir, setDividir] = useState(lancamento.dividir)
+  const [divisaoPct, setDivisaoPct] = useState(lancamento.divisao_percentual ?? 50)
 
   const myName = myEmail.split('@')[0]
   const partnerName = partnerEmail.split('@')[0]
+  const pagadorNome = pagoPor === myEmail ? myName : partnerName
+  const outroNome = pagoPor === myEmail ? partnerName : myName
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -38,10 +48,12 @@ export default function EditarLancamentoCasalForm({ lancamento, myEmail, partner
       .update({
         descricao: fd.get('descricao') as string,
         valor: parseFloat(fd.get('valor') as string),
-        tipo: fd.get('tipo') as 'receita' | 'despesa',
+        tipo,
         categoria: fd.get('categoria') as string,
         data: fd.get('data') as string,
-        pago_por: (fd.get('pago_por') as string) || null,
+        pago_por: pagoPor,
+        dividir: tipo === 'despesa' ? dividir : false,
+        divisao_percentual: tipo === 'despesa' && dividir ? divisaoPct : 100,
       })
       .eq('id', lancamento.id)
 
@@ -83,7 +95,12 @@ export default function EditarLancamentoCasalForm({ lancamento, myEmail, partner
         </div>
         <div>
           <label className="block text-xs text-slate-400 mb-1.5">Tipo</label>
-          <select name="tipo" required defaultValue={lancamento.tipo} className={SELECT_CLS}>
+          <select
+            value={tipo}
+            onChange={(e) => setTipo(e.target.value as 'receita' | 'despesa')}
+            required
+            className={SELECT_CLS}
+          >
             <option value="despesa">Despesa</option>
             <option value="receita">Receita</option>
           </select>
@@ -116,15 +133,92 @@ export default function EditarLancamentoCasalForm({ lancamento, myEmail, partner
       <div>
         <label className="block text-xs text-slate-400 mb-1.5">Quem pagou</label>
         <select
-          name="pago_por"
+          value={pagoPor}
+          onChange={(e) => setPagoPor(e.target.value)}
           required
-          defaultValue={lancamento.pago_por ?? myEmail}
           className={SELECT_CLS}
         >
           <option value={myEmail}>{myName} (você)</option>
           {partnerEmail && <option value={partnerEmail}>{partnerName}</option>}
         </select>
       </div>
+
+      {/* Divisão — só para despesas */}
+      {tipo === 'despesa' && (
+        <div className="space-y-3">
+          <button
+            type="button"
+            onClick={() => setDividir((v) => !v)}
+            className={`w-full flex items-center justify-between px-4 py-3 rounded-lg border transition-colors ${
+              dividir
+                ? 'border-violet-500/50 bg-violet-600/10 text-violet-300'
+                : 'border-white/10 bg-white/5 text-slate-400 hover:text-white'
+            }`}
+          >
+            <span className="text-sm">Dividir esta despesa</span>
+            <div className={`w-9 h-5 rounded-full transition-colors relative ${dividir ? 'bg-violet-600' : 'bg-white/10'}`}>
+              <div className={`w-3.5 h-3.5 bg-white rounded-full absolute top-0.5 transition-transform ${dividir ? 'translate-x-4' : 'translate-x-0.5'}`} />
+            </div>
+          </button>
+
+          {dividir && (
+            <div className="bg-white/5 rounded-xl p-4 space-y-3">
+              {/* Presets */}
+              <div className="flex gap-2">
+                {PRESETS.map((pct) => (
+                  <button
+                    key={pct}
+                    type="button"
+                    onClick={() => setDivisaoPct(pct)}
+                    className={`flex-1 py-1.5 rounded-lg text-xs font-medium transition-colors ${
+                      divisaoPct === pct
+                        ? 'bg-violet-600 text-white'
+                        : 'bg-white/5 text-slate-400 hover:text-white'
+                    }`}
+                  >
+                    {pct}/{100 - pct}
+                  </button>
+                ))}
+              </div>
+
+              {/* Labels */}
+              <div className="flex items-center justify-between text-xs">
+                <div className="text-center">
+                  <p className="text-slate-500 mb-0.5 capitalize">{pagadorNome}</p>
+                  <p className="font-semibold text-white">{divisaoPct}%</p>
+                </div>
+                <div className="flex-1 mx-3 relative h-1.5 bg-white/10 rounded-full">
+                  <div
+                    className="absolute inset-y-0 left-0 bg-violet-500 rounded-full transition-all"
+                    style={{ width: `${divisaoPct}%` }}
+                  />
+                </div>
+                <div className="text-center">
+                  <p className="text-slate-500 mb-0.5 capitalize">{outroNome}</p>
+                  <p className="font-semibold text-white">{100 - divisaoPct}%</p>
+                </div>
+              </div>
+
+              {/* Input customizado */}
+              <div className="flex items-center gap-2">
+                <label className="text-xs text-slate-500 capitalize shrink-0">{pagadorNome}:</label>
+                <input
+                  type="number"
+                  min={1}
+                  max={99}
+                  value={divisaoPct}
+                  onChange={(e) => {
+                    const v = Math.min(99, Math.max(1, parseInt(e.target.value) || 1))
+                    setDivisaoPct(v)
+                  }}
+                  className="w-16 bg-white/5 border border-white/10 rounded-lg px-2 py-1 text-sm text-center focus:outline-none focus:border-violet-500/50"
+                />
+                <span className="text-xs text-slate-500">%</span>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
 
       {error && <p className="text-red-400 text-xs">{error}</p>}
 
