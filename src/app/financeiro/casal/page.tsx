@@ -3,7 +3,7 @@ import { createClient } from '@/lib/supabase/server'
 import Nav from '../_components/Nav'
 import { deletarLancamentoCasal } from '../actions'
 import DeleteButton from '../lancamentos/_components/DeleteButton'
-import type { Lancamento, Couple, Profile } from '@/types/financeiro'
+import type { Lancamento, Couple, Profile, Conta } from '@/types/financeiro'
 
 export default async function CasalPage() {
   const supabase = await createClient()
@@ -101,6 +101,18 @@ export default async function CasalPage() {
   const mesNome = now.toLocaleString('pt-BR', { month: 'long', year: 'numeric' })
   const ultimos5 = lancamentos.slice(0, 5)
 
+  // Contas pendentes do casal
+  const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`
+  const { data: contasData } = await supabase
+    .from('contas')
+    .select('tipo, valor, vencimento')
+    .eq('couple_id', couple.id)
+    .eq('pago', false)
+  const contasPendentes = (contasData ?? []) as Pick<Conta, 'tipo' | 'valor' | 'vencimento'>[]
+  const contasAPagar = contasPendentes.filter((c) => c.tipo === 'pagar').reduce((s, c) => s + Number(c.valor), 0)
+  const contasAReceber = contasPendentes.filter((c) => c.tipo === 'receber').reduce((s, c) => s + Number(c.valor), 0)
+  const contasVencidas = contasPendentes.filter((c) => c.vencimento < today).length
+
   const nomeEu = meEmail.split('@')[0]
   const nomeParceiro = partnerEmail.split('@')[0]
 
@@ -174,6 +186,44 @@ export default async function CasalPage() {
             </div>
           </div>
         )}
+
+        {/* Contas do casal */}
+        <div className="glass rounded-2xl p-6 mb-6">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-sm font-medium text-slate-300">Contas a pagar / receber</h2>
+            <Link
+              href="/financeiro/contas?modo=casal"
+              className="text-xs text-slate-500 hover:text-violet-400 transition-colors"
+            >
+              Ver todas →
+            </Link>
+          </div>
+          {contasPendentes.length === 0 ? (
+            <p className="text-slate-500 text-sm text-center py-4">
+              Nenhuma conta pendente.{' '}
+              <Link href="/financeiro/contas/nova?modo=casal" className="text-violet-400 hover:underline">
+                Adicionar
+              </Link>
+            </p>
+          ) : (
+            <div className="grid grid-cols-3 gap-3">
+              <div className="bg-white/5 rounded-xl p-4">
+                <p className="text-xs text-slate-500 mb-1">A pagar</p>
+                <p className="text-base font-bold text-red-400">{fmt(contasAPagar)}</p>
+              </div>
+              <div className="bg-white/5 rounded-xl p-4">
+                <p className="text-xs text-slate-500 mb-1">A receber</p>
+                <p className="text-base font-bold text-emerald-400">{fmt(contasAReceber)}</p>
+              </div>
+              <div className="bg-white/5 rounded-xl p-4">
+                <p className="text-xs text-slate-500 mb-1">Vencidas</p>
+                <p className={`text-base font-bold ${contasVencidas > 0 ? 'text-amber-400' : 'text-slate-400'}`}>
+                  {contasVencidas}
+                </p>
+              </div>
+            </div>
+          )}
+        </div>
 
         {/* Últimos lançamentos */}
         <div className="glass rounded-2xl p-6">

@@ -3,7 +3,12 @@ import Nav from '../_components/Nav'
 import ContasClient from './ContasClient'
 import type { Conta, Couple, Profile } from '@/types/financeiro'
 
-export default async function ContasPage() {
+export default async function ContasPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ modo?: string }>
+}) {
+  const { modo } = await searchParams
   const supabase = await createClient()
   const {
     data: { user },
@@ -55,6 +60,7 @@ export default async function ContasPage() {
           coupleId={couple?.id ?? null}
           myEmail={user.email!}
           partnerEmail={partnerEmail}
+          defaultMode={modo === 'casal' && couple ? 'casal' : 'individual'}
         />
       </div>
     </>

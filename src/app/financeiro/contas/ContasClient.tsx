@@ -14,6 +14,7 @@ type Props = {
   coupleId: string | null
   myEmail: string
   partnerEmail: string | null
+  defaultMode: Mode
 }
 
 export default function ContasClient({
@@ -22,8 +23,9 @@ export default function ContasClient({
   coupleId,
   myEmail,
   partnerEmail,
+  defaultMode,
 }: Props) {
-  const [mode, setMode] = useState<Mode>('individual')
+  const [mode, setMode] = useState<Mode>(defaultMode)
   const [filtro, setFiltro] = useState<Filtro>('todas')
 
   const todas = mode === 'individual' ? individuais : casal

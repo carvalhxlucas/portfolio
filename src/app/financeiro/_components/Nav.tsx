@@ -6,7 +6,6 @@ type Tab = 'individual' | 'casal' | 'contas' | 'investimentos' | 'resumo' | 'con
 const TABS = [
   { key: 'individual', href: '/financeiro', label: 'Individual' },
   { key: 'casal', href: '/financeiro/casal', label: 'Casal' },
-  { key: 'contas', href: '/financeiro/contas', label: 'Contas' },
   { key: 'investimentos', href: '/financeiro/investimentos', label: 'Investimentos' },
   { key: 'resumo', href: '/financeiro/resumo', label: 'Resumo' },
 ] as const
