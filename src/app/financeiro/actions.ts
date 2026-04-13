@@ -215,6 +215,35 @@ export async function deletarConta(id: string) {
   revalidatePath('/financeiro/contas')
 }
 
+export async function acertarConta(formData: FormData) {
+  const supabase = await createClient()
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
+  if (!user) redirect('/financeiro/login')
+
+  const coupleId = formData.get('coupleId') as string
+  const pagadorEmail = formData.get('pagadorEmail') as string
+  const valor = parseFloat(formData.get('valor') as string)
+  const descricao = (formData.get('descricao') as string).trim() || 'Acerto de conta'
+  const today = new Date().toISOString().split('T')[0]
+
+  const { error } = await supabase.from('lancamentos').insert({
+    user_id: null,
+    couple_id: coupleId,
+    descricao,
+    valor,
+    tipo: 'acerto',
+    categoria: 'Acerto',
+    data: today,
+    pago_por: pagadorEmail,
+  })
+
+  if (error) throw new Error(error.message)
+
+  revalidatePath('/financeiro/casal')
+}
+
 export async function desvincularCasal(coupleId: string) {
   const supabase = await createClient()
   await supabase.from('couples').delete().eq('id', coupleId)

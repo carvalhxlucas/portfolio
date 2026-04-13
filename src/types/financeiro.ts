@@ -4,7 +4,7 @@ export type Lancamento = {
   couple_id: string | null
   descricao: string
   valor: number
-  tipo: 'receita' | 'despesa'
+  tipo: 'receita' | 'despesa' | 'acerto'
   categoria: string
   data: string
   pago_por: string | null

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { createClient } from '@/lib/supabase/server'
 import Nav from '../_components/Nav'
 import NovoButton from '../_components/NovoButton'
+import AcertoButton from './_components/AcertoButton'
 import { deletarLancamentoCasal } from '../actions'
 import DeleteButton from '../lancamentos/_components/DeleteButton'
 import type { Lancamento, Couple, Profile, Conta } from '@/types/financeiro'
@@ -99,6 +100,16 @@ export default async function CasalPage() {
   const metade = totalDespesas / 2
   const diferenca = pagueiEu - metade
 
+  // Acertos do mês: descontam do saldo devedor
+  const acertosCasal = lancamentos.filter((l) => l.tipo === 'acerto')
+  const acertoEuParaParceiro = acertosCasal
+    .filter((l) => l.pago_por === meEmail)
+    .reduce((acc, l) => acc + Number(l.valor), 0)
+  const acertoParceiroPraMim = acertosCasal
+    .filter((l) => l.pago_por === partnerEmail)
+    .reduce((acc, l) => acc + Number(l.valor), 0)
+  const diferencaAjustada = diferenca + acertoEuParaParceiro - acertoParceiroPraMim
+
   const mesNome = now.toLocaleString('pt-BR', { month: 'long', year: 'numeric' })
   const ultimos5 = lancamentos.slice(0, 5)
 
@@ -167,23 +178,41 @@ export default async function CasalPage() {
                 <p className="text-lg font-bold">{fmt(pagueiParceiro)}</p>
               </div>
             </div>
-            <div className={`rounded-xl p-4 ${Math.abs(diferenca) < 0.01 ? 'bg-emerald-500/10 border border-emerald-500/20' : 'bg-amber-500/10 border border-amber-500/20'}`}>
-              {Math.abs(diferenca) < 0.01 ? (
+            <div className={`rounded-xl p-4 ${Math.abs(diferencaAjustada) < 0.01 ? 'bg-emerald-500/10 border border-emerald-500/20' : 'bg-amber-500/10 border border-amber-500/20'}`}>
+              {Math.abs(diferencaAjustada) < 0.01 ? (
                 <p className="text-sm text-emerald-400 text-center font-medium">
                   Estão quites! Cada um pagou {fmt(metade)}
                 </p>
-              ) : diferenca > 0 ? (
-                <p className="text-sm text-amber-300 text-center">
-                  <span className="font-semibold capitalize">{nomeParceiro}</span> deve{' '}
-                  <span className="font-bold text-amber-400">{fmt(diferenca)}</span> para{' '}
-                  <span className="font-semibold capitalize">{nomeEu}</span>
-                </p>
+              ) : diferencaAjustada > 0 ? (
+                <>
+                  <p className="text-sm text-amber-300 text-center">
+                    <span className="font-semibold capitalize">{nomeParceiro}</span> deve{' '}
+                    <span className="font-bold text-amber-400">{fmt(diferencaAjustada)}</span> para{' '}
+                    <span className="font-semibold capitalize">{nomeEu}</span>
+                  </p>
+                  <AcertoButton
+                    coupleId={couple.id}
+                    valor={diferencaAjustada}
+                    pagadorEmail={partnerEmail}
+                    pagadorNome={nomeParceiro}
+                    receptorNome={nomeEu}
+                  />
+                </>
               ) : (
-                <p className="text-sm text-amber-300 text-center">
-                  <span className="font-semibold capitalize">{nomeEu}</span> deve{' '}
-                  <span className="font-bold text-amber-400">{fmt(Math.abs(diferenca))}</span> para{' '}
-                  <span className="font-semibold capitalize">{nomeParceiro}</span>
-                </p>
+                <>
+                  <p className="text-sm text-amber-300 text-center">
+                    <span className="font-semibold capitalize">{nomeEu}</span> deve{' '}
+                    <span className="font-bold text-amber-400">{fmt(Math.abs(diferencaAjustada))}</span> para{' '}
+                    <span className="font-semibold capitalize">{nomeParceiro}</span>
+                  </p>
+                  <AcertoButton
+                    coupleId={couple.id}
+                    valor={Math.abs(diferencaAjustada)}
+                    pagadorEmail={meEmail}
+                    pagadorNome={nomeEu}
+                    receptorNome={nomeParceiro}
+                  />
+                </>
               )}
             </div>
           </div>
@@ -265,9 +294,15 @@ export default async function CasalPage() {
                   </div>
                   <div className="flex items-center gap-3 ml-4 shrink-0">
                     <span
-                      className={`text-sm font-medium ${l.tipo === 'receita' ? 'text-emerald-400' : 'text-red-400'}`}
+                      className={`text-sm font-medium ${
+                        l.tipo === 'receita'
+                          ? 'text-emerald-400'
+                          : l.tipo === 'acerto'
+                          ? 'text-amber-400'
+                          : 'text-red-400'
+                      }`}
                     >
-                      {l.tipo === 'receita' ? '+' : '-'}
+                      {l.tipo === 'acerto' ? '⇄ ' : l.tipo === 'receita' ? '+' : '-'}
                       {fmt(Number(l.valor))}
                     </span>
                     <Link
