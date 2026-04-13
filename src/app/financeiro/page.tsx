@@ -1,9 +1,10 @@
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/server'
 import Nav from './_components/Nav'
+import NovoButton from './_components/NovoButton'
 import { deletarLancamento } from './actions'
 import DeleteButton from './lancamentos/_components/DeleteButton'
-import type { Lancamento, Conta } from '@/types/financeiro'
+import type { Lancamento, Conta, Investimento } from '@/types/financeiro'
 
 export default async function DashboardPage() {
   const supabase = await createClient()
@@ -18,6 +19,7 @@ export default async function DashboardPage() {
   const startDate = `${year}-${String(month).padStart(2, '0')}-01`
   const endDate = `${year}-${String(month).padStart(2, '0')}-${String(lastDay).padStart(2, '0')}`
 
+  // Lançamentos do mês
   const { data } = await supabase
     .from('lancamentos')
     .select('*')
@@ -49,6 +51,24 @@ export default async function DashboardPage() {
   const totalAReceber = contasPendentes.filter((c) => c.tipo === 'receber').reduce((s, c) => s + Number(c.valor), 0)
   const contasVencidas = contasPendentes.filter((c) => c.vencimento < today).length
 
+  // Investimentos individuais — patrimônio total
+  const { data: invData } = await supabase
+    .from('investimentos')
+    .select('tipo, valor')
+    .is('couple_id', null)
+  const investimentos = (invData ?? []) as Pick<Investimento, 'tipo' | 'valor'>[]
+  const patrimonioIndividual = investimentos.reduce((acc, i) => {
+    if (i.tipo === 'aporte' || i.tipo === 'rendimento') return acc + Number(i.valor)
+    if (i.tipo === 'resgate') return acc - Number(i.valor)
+    return acc
+  }, 0)
+
+  const NOVO_OPTIONS = [
+    { label: 'Lançamento', href: '/financeiro/lancamentos/novo' },
+    { label: 'Conta a pagar/receber', href: '/financeiro/contas/nova' },
+    { label: 'Investimento', href: '/financeiro/investimentos/novo' },
+  ]
+
   return (
     <>
       <Nav active="individual" />
@@ -58,120 +78,148 @@ export default async function DashboardPage() {
             <h1 className="text-2xl font-bold gradient-text">Individual</h1>
             <p className="text-slate-400 text-sm capitalize">{mesNome}</p>
           </div>
-          <Link
-            href="/financeiro/lancamentos/novo"
-            className="bg-violet-600 hover:bg-violet-500 text-sm px-4 py-2 rounded-lg transition-colors"
-          >
-            + Novo
-          </Link>
+          <NovoButton options={NOVO_OPTIONS} />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-          <div className="glass rounded-2xl p-5">
-            <p className="text-slate-500 text-xs mb-1.5">Saldo do mês</p>
-            <p className={`text-2xl font-bold ${saldo >= 0 ? 'text-emerald-400' : 'text-red-400'}`}>
-              {fmt(saldo)}
-            </p>
-          </div>
-          <div className="glass rounded-2xl p-5">
-            <p className="text-slate-500 text-xs mb-1.5">Receitas</p>
-            <p className="text-2xl font-bold text-emerald-400">{fmt(receitas)}</p>
-          </div>
-          <div className="glass rounded-2xl p-5">
-            <p className="text-slate-500 text-xs mb-1.5">Despesas</p>
-            <p className="text-2xl font-bold text-red-400">{fmt(despesas)}</p>
-          </div>
-        </div>
-
-        <div className="glass rounded-2xl p-6">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-sm font-medium text-slate-300">Últimos lançamentos</h2>
-            <Link
-              href="/financeiro/lancamentos"
-              className="text-xs text-slate-500 hover:text-violet-400 transition-colors"
-            >
-              Ver todos →
-            </Link>
-          </div>
-
-          {ultimos5.length === 0 ? (
-            <p className="text-slate-500 text-sm text-center py-8">
-              Nenhum lançamento este mês.{' '}
-              <Link href="/financeiro/lancamentos/novo" className="text-violet-400 hover:underline">
-                Criar primeiro
-              </Link>
-            </p>
-          ) : (
-            <ul className="space-y-0">
-              {ultimos5.map((l, i) => (
-                <li
-                  key={l.id}
-                  className={`flex items-center justify-between py-3 ${i < ultimos5.length - 1 ? 'border-b border-white/5' : ''}`}
-                >
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm truncate">{l.descricao}</p>
-                    <p className="text-xs text-slate-500 mt-0.5">
-                      {l.categoria} · {fmtDate(l.data)}
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-3 ml-4 shrink-0">
-                    <span
-                      className={`text-sm font-medium ${l.tipo === 'receita' ? 'text-emerald-400' : 'text-red-400'}`}
-                    >
-                      {l.tipo === 'receita' ? '+' : '-'}
-                      {fmt(Number(l.valor))}
-                    </span>
-                    <Link
-                      href={`/financeiro/lancamentos/${l.id}/editar`}
-                      className="text-xs text-slate-500 hover:text-violet-400 transition-colors"
-                    >
-                      Editar
-                    </Link>
-                    <DeleteButton id={l.id} action={deletarLancamento} />
-                  </div>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-
-        {/* Contas */}
-        <div className="glass rounded-2xl p-6 mt-6">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-sm font-medium text-slate-300">Contas a pagar / receber</h2>
-            <Link
-              href="/financeiro/contas"
-              className="text-xs text-slate-500 hover:text-violet-400 transition-colors"
-            >
-              Ver todas →
-            </Link>
-          </div>
-          {contasPendentes.length === 0 ? (
-            <p className="text-slate-500 text-sm text-center py-4">
-              Nenhuma conta pendente.{' '}
-              <Link href="/financeiro/contas/nova" className="text-violet-400 hover:underline">
-                Adicionar
-              </Link>
-            </p>
-          ) : (
-            <div className="grid grid-cols-3 gap-3">
-              <div className="bg-white/5 rounded-xl p-4">
-                <p className="text-xs text-slate-500 mb-1">A pagar</p>
-                <p className="text-base font-bold text-red-400">{fmt(totalAPagar)}</p>
-              </div>
-              <div className="bg-white/5 rounded-xl p-4">
-                <p className="text-xs text-slate-500 mb-1">A receber</p>
-                <p className="text-base font-bold text-emerald-400">{fmt(totalAReceber)}</p>
-              </div>
-              <div className="bg-white/5 rounded-xl p-4">
-                <p className="text-xs text-slate-500 mb-1">Vencidas</p>
-                <p className={`text-base font-bold ${contasVencidas > 0 ? 'text-amber-400' : 'text-slate-400'}`}>
-                  {contasVencidas}
-                </p>
-              </div>
+        {/* ── Lançamentos ─────────────────────────────────────────────── */}
+        <section className="mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+            <div className="glass rounded-2xl p-5">
+              <p className="text-slate-500 text-xs mb-1.5">Saldo do mês</p>
+              <p className={`text-2xl font-bold ${saldo >= 0 ? 'text-emerald-400' : 'text-red-400'}`}>
+                {fmt(saldo)}
+              </p>
             </div>
-          )}
-        </div>
+            <div className="glass rounded-2xl p-5">
+              <p className="text-slate-500 text-xs mb-1.5">Receitas</p>
+              <p className="text-2xl font-bold text-emerald-400">{fmt(receitas)}</p>
+            </div>
+            <div className="glass rounded-2xl p-5">
+              <p className="text-slate-500 text-xs mb-1.5">Despesas</p>
+              <p className="text-2xl font-bold text-red-400">{fmt(despesas)}</p>
+            </div>
+          </div>
+
+          <div className="glass rounded-2xl p-6">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-sm font-medium text-slate-300">Últimos lançamentos</h2>
+              <Link
+                href="/financeiro/lancamentos"
+                className="text-xs text-slate-500 hover:text-violet-400 transition-colors"
+              >
+                Ver todos →
+              </Link>
+            </div>
+
+            {ultimos5.length === 0 ? (
+              <p className="text-slate-500 text-sm text-center py-8">
+                Nenhum lançamento este mês.{' '}
+                <Link href="/financeiro/lancamentos/novo" className="text-violet-400 hover:underline">
+                  Criar primeiro
+                </Link>
+              </p>
+            ) : (
+              <ul>
+                {ultimos5.map((l, i) => (
+                  <li
+                    key={l.id}
+                    className={`flex items-center justify-between py-3 ${i < ultimos5.length - 1 ? 'border-b border-white/5' : ''}`}
+                  >
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm truncate">{l.descricao}</p>
+                      <p className="text-xs text-slate-500 mt-0.5">
+                        {l.categoria} · {fmtDate(l.data)}
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-3 ml-4 shrink-0">
+                      <span
+                        className={`text-sm font-medium ${l.tipo === 'receita' ? 'text-emerald-400' : 'text-red-400'}`}
+                      >
+                        {l.tipo === 'receita' ? '+' : '-'}
+                        {fmt(Number(l.valor))}
+                      </span>
+                      <Link
+                        href={`/financeiro/lancamentos/${l.id}/editar`}
+                        className="text-xs text-slate-500 hover:text-violet-400 transition-colors"
+                      >
+                        Editar
+                      </Link>
+                      <DeleteButton id={l.id} action={deletarLancamento} />
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </section>
+
+        {/* ── Contas ──────────────────────────────────────────────────── */}
+        <section className="mb-6">
+          <div className="glass rounded-2xl p-6">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-sm font-medium text-slate-300">Contas a pagar / receber</h2>
+              <Link
+                href="/financeiro/contas"
+                className="text-xs text-slate-500 hover:text-violet-400 transition-colors"
+              >
+                Ver todas →
+              </Link>
+            </div>
+            {contasPendentes.length === 0 ? (
+              <p className="text-slate-500 text-sm text-center py-4">
+                Nenhuma conta pendente.{' '}
+                <Link href="/financeiro/contas/nova" className="text-violet-400 hover:underline">
+                  Adicionar
+                </Link>
+              </p>
+            ) : (
+              <div className="grid grid-cols-3 gap-3">
+                <div className="bg-white/5 rounded-xl p-4">
+                  <p className="text-xs text-slate-500 mb-1">A pagar</p>
+                  <p className="text-base font-bold text-red-400">{fmt(totalAPagar)}</p>
+                </div>
+                <div className="bg-white/5 rounded-xl p-4">
+                  <p className="text-xs text-slate-500 mb-1">A receber</p>
+                  <p className="text-base font-bold text-emerald-400">{fmt(totalAReceber)}</p>
+                </div>
+                <div className="bg-white/5 rounded-xl p-4">
+                  <p className="text-xs text-slate-500 mb-1">Vencidas</p>
+                  <p className={`text-base font-bold ${contasVencidas > 0 ? 'text-amber-400' : 'text-slate-400'}`}>
+                    {contasVencidas}
+                  </p>
+                </div>
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* ── Investimentos ───────────────────────────────────────────── */}
+        <section>
+          <div className="glass rounded-2xl p-6">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-sm font-medium text-slate-300">Investimentos</h2>
+              <Link
+                href="/financeiro/investimentos"
+                className="text-xs text-slate-500 hover:text-violet-400 transition-colors"
+              >
+                Ver todos →
+              </Link>
+            </div>
+            {investimentos.length === 0 ? (
+              <p className="text-slate-500 text-sm text-center py-4">
+                Nenhum investimento registrado.{' '}
+                <Link href="/financeiro/investimentos/novo" className="text-violet-400 hover:underline">
+                  Registrar primeiro
+                </Link>
+              </p>
+            ) : (
+              <div className="bg-white/5 rounded-xl p-4 text-center">
+                <p className="text-xs text-slate-500 mb-1">Patrimônio individual</p>
+                <p className="text-2xl font-bold text-violet-400">{fmt(patrimonioIndividual)}</p>
+              </div>
+            )}
+          </div>
+        </section>
 
         <p className="text-xs text-slate-600 mt-6 text-center">{user?.email}</p>
       </div>

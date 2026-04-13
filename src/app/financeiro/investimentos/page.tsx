@@ -58,10 +58,16 @@ export default async function InvestimentosPage() {
 
   return (
     <>
-      <Nav active="investimentos" />
+      <Nav active="individual" />
       <div className="max-w-4xl mx-auto px-4 pb-8">
         <div className="flex items-center justify-between mb-8">
           <div>
+            <Link
+              href="/financeiro"
+              className="text-xs text-slate-500 hover:text-slate-300 transition-colors mb-1 inline-block"
+            >
+              ← Individual
+            </Link>
             <h1 className="text-2xl font-bold gradient-text">Investimentos</h1>
             <p className="text-slate-400 text-sm">Carteira consolidada</p>
           </div>
