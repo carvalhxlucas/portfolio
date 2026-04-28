@@ -32,7 +32,7 @@ export default async function CasalPage({
     .from('couples')
     .select('*')
     .or(`user1_id.eq.${user.id},user2_id.eq.${user.id}`)
-    .single()
+    .maybeSingle()
 
   const couple = coupleData as Couple | null
 
@@ -65,7 +65,7 @@ export default async function CasalPage({
     .from('profiles')
     .select('id, email, nome')
     .eq('id', partnerId)
-    .single()
+    .maybeSingle()
   const partner = partnerProfile as Profile | null
 
   const now = new Date()
