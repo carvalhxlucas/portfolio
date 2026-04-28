@@ -272,11 +272,11 @@ export async function acertarConta(formData: FormData) {
   const coupleId = formData.get('coupleId') as string
   const pagadorEmail = formData.get('pagadorEmail') as string
   const valor = parseFloat(formData.get('valor') as string)
-  const descricao = (formData.get('descricao') as string).trim() || 'Acerto de conta'
+  const descricao = ((formData.get('descricao') as string) ?? '').trim() || 'Acerto de conta'
   const today = new Date().toISOString().split('T')[0]
 
   const { error } = await supabase.from('lancamentos').insert({
-    user_id: null,
+    user_id: user.id,
     couple_id: coupleId,
     descricao,
     valor,
