@@ -20,13 +20,19 @@ export default function AcertoButton({
 }: Props) {
   const [open, setOpen] = useState(false)
   const [pending, startTransition] = useTransition()
+  const [error, setError] = useState<string | null>(null)
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     const fd = new FormData(e.currentTarget)
+    setError(null)
     startTransition(async () => {
-      await acertarConta(fd)
-      setOpen(false)
+      try {
+        await acertarConta(fd)
+        setOpen(false)
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Erro ao registrar acerto')
+      }
     })
   }
 
@@ -74,6 +80,10 @@ export default function AcertoButton({
           />
         </div>
       </div>
+
+      {error && (
+        <p className="text-xs text-red-400">{error}</p>
+      )}
 
       <div className="flex gap-2">
         <button
