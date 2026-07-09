@@ -7,13 +7,14 @@
     "articles": "Artigos"
   },
   "hero": {
-    "role": "Engenheiro de IA/ML",
-    "bio": "Construindo sistemas RAG escaláveis, orquestrando LLMs e automatizando fluxos de trabalho complexos na interseção de IA Generativa e Cloud Architecture.",
+    "role": "Engenheiro de IA Sênior",
+    "bio": "Construindo sistemas agênticos autônomos, pipelines RAG escaláveis e orquestração de LLMs na interseção de IA Generativa e Cloud Architecture.",
     "cta_projects": "Ver Projetos",
     "cta_about": "Sobre mim",
     "featured": "Projetos em Destaque"
   },
   "projects": {
+    "eyebrow": "Portfólio",
     "title": "Projetos",
     "subtitle": "Uma seleção de sistemas e ferramentas que construí.",
     "view_code": "Ver no GitHub"
@@ -21,20 +22,23 @@
   "about": {
     "title": "Sobre",
     "subtitle": "Trajetória & Experiência",
-    "bio": "Sou um Engenheiro de Software especializado em sistemas de IA, com foco no design e deploy de pipelines RAG em produção, orquestração de LLMs e workflows multi-agente.\n\nNo último ano, tenho atuado na interseção de IA Generativa e engenharia backend: construindo assistentes inteligentes de suporte ao paciente com RAG e Bancos de Dados Vetoriais, projetando APIs que conectam LLMs a dados proprietários e liderando a adoção de práticas de desenvolvimento assistido por IA em times de engenharia.\n\nMinha stack gira em torno de Python, Node.js, LangChain, LangGraph e AWS, com foco em construir sistemas que não são apenas funcionais, mas confiáveis, de baixa latência e resistentes a alucinações.\n\nMe preocupo profundamente com o ciclo de vida completo de um sistema de IA: desde a ingestão de dados e estratégia de chunking até a qualidade de retrieval, design de prompts, observabilidade e deploy em produção.\n\nAtualmente baseado no Brasil, buscando ativamente oportunidades como AI Engineer e full-stack onde possa continuar construindo na fronteira da IA aplicada.",
+    "bio": "Sou um Engenheiro de IA especializado no design e deploy de arquiteturas cognitivas em produção — de pipelines RAG avançados a workflows autônomos multi-agente.\n\nComo Engenheiro de IA Sênior na Solvefy, estou aprofundando minha expertise em IA Agêntica, construindo sistemas capazes de raciocínio complexo e execução autônoma de tarefas que vão além de simples chamadas de API.\n\nAntes disso, na Essentia Group, arquitetei assistentes inteligentes de suporte ao paciente usando RAG e Bancos de Dados Vetoriais, e projetei APIs que orquestram LLMs, bancos de dados proprietários e sistemas legados com foco em baixa latência e resistência a alucinações.\n\nMinha stack gira em torno de Python, Node.js, LangChain, LangGraph, FastAPI e AWS. Cuido do ciclo de vida completo de um sistema de IA: ingestão de dados, estratégia de chunking, avaliação de retrieval, design de prompts, observabilidade e deploy em produção.\n\nAtualmente baseado em Florianópolis, construindo sistemas de IA que não são apenas tecnicamente avançados, mas altamente performáticos e seguros para ambientes de produção globais.",
     "experience": "Experiência"
   },
   "certifications": {
+    "eyebrow": "Credenciais",
     "title": "Certificações",
     "subtitle": "Credenciais e badges profissionais.",
     "view_credential": "Ver credencial"
   },
   "courses": {
+    "eyebrow": "Aprendizado",
     "title": "Cursos",
     "subtitle": "Aprendizado contínuo em ML, IA e engenharia.",
     "view_certificate": "Ver certificado"
   },
   "articles": {
+    "eyebrow": "Escrita",
     "title": "Artigos",
     "subtitle": "Sobre engenharia de IA, design de sistemas e desenvolvimento.",
     "coming_soon": "Em breve",

@@ -7,13 +7,14 @@
     "articles": "Articles"
   },
   "hero": {
-    "role": "AI Engineer",
-    "bio": "Building scalable RAG systems, orchestrating LLMs, and automating complex workflows at the intersection of Generative AI and Cloud Architecture.",
+    "role": "Senior AI Engineer",
+    "bio": "Building autonomous agentic systems, scalable RAG pipelines, and LLM orchestration at the intersection of Generative AI and Cloud Architecture.",
     "cta_projects": "View Projects",
     "cta_about": "About me",
     "featured": "Featured Projects"
   },
   "projects": {
+    "eyebrow": "Portfolio",
     "title": "Projects",
     "subtitle": "A selection of systems and tools I've built.",
     "view_code": "View on GitHub"
@@ -21,20 +22,23 @@
   "about": {
     "title": "About",
     "subtitle": "Background & Experience",
-    "bio": "I'm a Software Engineer specializing in AI systems, specifically in designing and deploying production-grade RAG pipelines, LLM orchestration, and multi-agent workflows.\n\nOver the past year, I've been working at the intersection of Generative AI and backend engineering: building intelligent patient support assistants using RAG and Vector Databases, designing APIs that connect LLMs to proprietary data, and driving the adoption of AI-assisted development practices within engineering teams.\n\nMy stack centers around Python, Node.js, LangChain, LangGraph, and AWS, with a focus on building systems that are not just functional, but reliable, low-latency, and hallucination-resistant.\n\nI care deeply about the full lifecycle of an AI system: from data ingestion and chunking strategy to retrieval quality, prompt design, observability, and production deployment.\n\nCurrently based in Brazil, actively seeking AI Engineer and full-stack opportunities where I can keep building at the frontier of applied AI.",
+    "bio": "I'm an AI Engineer specializing in designing and deploying production-grade cognitive architectures — from advanced RAG pipelines to autonomous multi-agent workflows.\n\nAs a Senior AI Engineer at Solvefy, I'm deepening my expertise in Agentic AI, building systems capable of complex reasoning and autonomous task execution that go beyond simple API calls.\n\nBefore that, at Essentia Group, I architected intelligent patient support assistants using RAG and Vector Databases, and designed APIs that orchestrate LLMs, proprietary databases, and legacy systems with a focus on low latency and hallucination resistance.\n\nMy stack centers around Python, Node.js, LangChain, LangGraph, FastAPI, and AWS. I own the full lifecycle of an AI system: data ingestion, chunking strategy, retrieval evaluation, prompt design, observability, and production deployment.\n\nCurrently based in Florianópolis, Brazil, building AI systems that are not just technically advanced, but highly performant and secure for global production environments.",
     "experience": "Experience"
   },
   "certifications": {
+    "eyebrow": "Credentials",
     "title": "Certifications",
     "subtitle": "Professional credentials and badges.",
     "view_credential": "View credential"
   },
   "courses": {
+    "eyebrow": "Learning",
     "title": "Courses",
     "subtitle": "Continuous learning across ML, AI, and engineering.",
     "view_certificate": "View certificate"
   },
   "articles": {
+    "eyebrow": "Writing",
     "title": "Articles",
     "subtitle": "Writing on AI engineering, systems design, and development.",
     "coming_soon": "Coming soon",

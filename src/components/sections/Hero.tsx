@@ -20,34 +20,22 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background orbs */}
+      {/* Ambient background */}
       <div className="absolute inset-0 -z-10 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-violet-600/20 blur-[120px] animate-pulse-glow" />
+        <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[42rem] h-[42rem] rounded-full bg-violet-600/15 blur-[140px] animate-pulse-glow" />
         <div
-          className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-blue-600/15 blur-[100px] animate-pulse-glow"
-          style={{ animationDelay: '2s' }}
-        />
-        <div
-          className="absolute top-1/2 right-1/3 w-64 h-64 rounded-full bg-cyan-500/10 blur-[90px] animate-pulse-glow"
+          className="absolute bottom-[-15%] right-[8%] w-[26rem] h-[26rem] rounded-full bg-indigo-600/10 blur-[120px] animate-pulse-glow"
           style={{ animationDelay: '4s' }}
         />
-        {/* Grid overlay */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage:
-              'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
-            backgroundSize: '60px 60px',
-          }}
-        />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
       </div>
 
       <div className="max-w-6xl mx-auto px-6 pt-32 pb-20 w-full">
-        <div className="flex flex-col items-center text-center gap-8">
+        <div className="flex flex-col items-center text-center gap-7">
           {/* Avatar */}
           <motion.div {...fadeUp(0)}>
             <div className="relative">
-              <div className="w-24 h-24 rounded-full p-0.5 bg-gradient-accent shadow-lg shadow-violet-500/25">
+              <div className="w-24 h-24 rounded-full p-[3px] bg-background ring-1 ring-violet-400/30 shadow-[0_0_40px_-8px_rgba(139,124,246,0.5)]">
                 <Image
                   src="https://github.com/carvalhxlucas.png"
                   alt="Lucas Carvalho"
@@ -57,24 +45,21 @@ export default function Hero() {
                   priority
                 />
               </div>
-              <span className="absolute bottom-1 right-1 w-4 h-4 bg-emerald-400 rounded-full border-2 border-background shadow-lg shadow-emerald-400/50" />
+              <span className="absolute bottom-0.5 right-0.5 w-3.5 h-3.5 bg-emerald-400/90 rounded-full border-2 border-background" />
             </div>
           </motion.div>
 
+          {/* Role eyebrow */}
+          <motion.span {...fadeUp(0.1)} className="eyebrow">
+            {t('role')}
+          </motion.span>
+
           {/* Name */}
-          <motion.div {...fadeUp(0.1)}>
+          <motion.div {...fadeUp(0.2)}>
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-none">
               <span className="gradient-text">Lucas</span>{' '}
               <span className="text-white">Carvalho</span>
             </h1>
-          </motion.div>
-
-          {/* Role badge */}
-          <motion.div {...fadeUp(0.2)}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-violet-500/20 text-violet-300 text-sm font-medium">
-              <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
-              {t('role')}
-            </div>
           </motion.div>
 
           {/* Bio */}
@@ -88,25 +73,25 @@ export default function Hero() {
           {/* CTAs */}
           <motion.div
             {...fadeUp(0.4)}
-            className="flex flex-wrap items-center justify-center gap-3"
+            className="flex flex-wrap items-center justify-center gap-3 mt-2"
           >
             <Link
               href="/projects"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-accent text-white font-semibold text-sm hover:opacity-90 hover:shadow-lg hover:shadow-violet-500/25 transition-all duration-200"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-accent text-white font-semibold text-sm shadow-[0_8px_24px_-8px_rgba(99,91,232,0.55)] hover:shadow-[0_10px_28px_-6px_rgba(99,91,232,0.7)] hover:-translate-y-0.5 transition-all duration-200"
             >
               {t('cta_projects')}
               <ArrowRight size={16} />
             </Link>
             <Link
               href="/about"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl glass border border-white/10 hover:border-white/20 text-white font-semibold text-sm transition-all duration-200"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl glass border border-white/10 hover:border-violet-400/25 text-white font-semibold text-sm transition-all duration-200"
             >
               {t('cta_about')}
             </Link>
           </motion.div>
 
           {/* Social links */}
-          <motion.div {...fadeUp(0.5)} className="flex items-center gap-4">
+          <motion.div {...fadeUp(0.5)} className="flex items-center gap-4 mt-1">
             <a
               href="https://github.com/carvalhxlucas"
               target="_blank"

@@ -25,7 +25,7 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
       className="glass glass-hover rounded-2xl overflow-hidden flex flex-col"
     >
       {/* Cover image */}
-      <div className="relative h-48 overflow-hidden bg-gradient-to-br from-violet-900/20 via-blue-900/20 to-cyan-900/20">
+      <div className="relative h-48 overflow-hidden bg-gradient-to-br from-violet-900/25 to-indigo-950/40">
         <Image
           src={project.coverImage}
           alt={project.coverImageAlt}
