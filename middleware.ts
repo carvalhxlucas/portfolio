@@ -13,6 +13,11 @@ export async function middleware(request: NextRequest) {
     return handleFinanceiroRoute(request)
   }
 
+  // /links — link-in-bio page, kept at a fixed URL outside i18n routing
+  if (pathname.startsWith('/links')) {
+    return NextResponse.next()
+  }
+
   // All other routes use next-intl i18n middleware
   return handleI18n(request)
 }
