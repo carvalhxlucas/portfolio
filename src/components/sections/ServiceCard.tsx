@@ -5,15 +5,16 @@ import { useTranslations } from 'next-intl';
 import { Check } from 'lucide-react';
 import { WhatsAppIcon } from '@/components/ui/BrandIcons';
 import { whatsappUrl } from '@/data/site';
-import { type Service } from '@/data/services';
+import { services, type Service } from '@/data/services';
 
 interface ServiceCardProps {
-  service: Service;
+  serviceKey: Service['key'];
   index?: number;
 }
 
-export default function ServiceCard({ service, index = 0 }: ServiceCardProps) {
+export default function ServiceCard({ serviceKey, index = 0 }: ServiceCardProps) {
   const t = useTranslations('services');
+  const service = services.find((s) => s.key === serviceKey)!;
   const Icon = service.icon;
   const features = t.raw(`${service.key}.features`) as string[];
 

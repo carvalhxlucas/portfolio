@@ -1,9 +1,20 @@
 import { useTranslations } from 'next-intl';
+import { setRequestLocale } from 'next-intl/server';
 import CertificationCard from '@/components/sections/CertificationCard';
 import PageHeader from '@/components/ui/PageHeader';
 import { certifications } from '@/data/certifications';
 
-export default function CertificationsPage() {
+export default async function CertificationsPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  return <CertificationsContent />;
+}
+
+function CertificationsContent() {
   const t = useTranslations('certifications');
 
   return (

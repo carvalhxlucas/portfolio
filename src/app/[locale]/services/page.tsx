@@ -1,10 +1,21 @@
 import { useTranslations } from 'next-intl';
+import { setRequestLocale } from 'next-intl/server';
 import PageHeader from '@/components/ui/PageHeader';
 import ServiceCard from '@/components/sections/ServiceCard';
 import ContactCTA from '@/components/sections/ContactCTA';
 import { services } from '@/data/services';
 
-export default function ServicesPage() {
+export default async function ServicesPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  return <ServicesContent />;
+}
+
+function ServicesContent() {
   const t = useTranslations('services');
 
   return (
@@ -13,7 +24,7 @@ export default function ServicesPage() {
         <PageHeader eyebrow={t('eyebrow')} title={t('title')} subtitle={t('subtitle')} />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {services.map((service, i) => (
-            <ServiceCard key={service.key} service={service} index={i} />
+            <ServiceCard key={service.key} serviceKey={service.key} index={i} />
           ))}
         </div>
       </div>

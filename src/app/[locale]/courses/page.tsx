@@ -1,9 +1,20 @@
 import { useTranslations } from 'next-intl';
+import { setRequestLocale } from 'next-intl/server';
 import CourseCard from '@/components/sections/CourseCard';
 import PageHeader from '@/components/ui/PageHeader';
 import { courses } from '@/data/courses';
 
-export default function CoursesPage() {
+export default async function CoursesPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  return <CoursesContent />;
+}
+
+function CoursesContent() {
   const t = useTranslations('courses');
 
   return (

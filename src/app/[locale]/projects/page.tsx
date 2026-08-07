@@ -1,9 +1,20 @@
 import { useTranslations } from 'next-intl';
+import { setRequestLocale } from 'next-intl/server';
 import ProjectCard from '@/components/sections/ProjectCard';
 import PageHeader from '@/components/ui/PageHeader';
 import { projects } from '@/data/projects';
 
-export default function ProjectsPage() {
+export default async function ProjectsPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  return <ProjectsContent />;
+}
+
+function ProjectsContent() {
   const t = useTranslations('projects');
 
   return (
