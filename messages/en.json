@@ -1,15 +1,18 @@
 {
   "nav": {
+    "services": "Services",
     "projects": "Projects",
     "about": "About",
     "certifications": "Certifications",
     "courses": "Courses",
-    "articles": "Articles"
+    "articles": "Articles",
+    "contact": "Contact"
   },
   "hero": {
     "role": "Senior AI Engineer",
     "bio": "Building autonomous agentic systems, scalable RAG pipelines, and LLM orchestration at the intersection of Generative AI and Cloud Architecture.",
     "cta_projects": "View Projects",
+    "cta_services": "Mentoring & Services",
     "cta_about": "About me",
     "featured": "Featured Projects"
   },
@@ -18,6 +21,68 @@
     "title": "Projects",
     "subtitle": "A selection of systems and tools I've built.",
     "view_code": "View on GitHub"
+  },
+  "services": {
+    "eyebrow": "Services",
+    "title": "How I can help you",
+    "subtitle": "Mentoring, training, and consulting to accelerate you or your team in AI — from your first RAG pipeline to multi-agent systems in production.",
+    "home_title": "Mentoring & Services",
+    "home_link": "View all services",
+    "home_card_link": "Learn more",
+    "cta": "Chat on WhatsApp",
+    "mentoring": {
+      "title": "1:1 Mentoring",
+      "description": "One-on-one sessions to accelerate your AI Engineering career — with a study plan, project reviews, and technical guidance from someone shipping AI to production every day.",
+      "features": [
+        "Personalized growth plan",
+        "Code and real-project reviews",
+        "AI Engineer interview preparation",
+        "Ongoing support between sessions"
+      ],
+      "whatsapp_message": "Hi Lucas! I saw your portfolio and I'm interested in 1:1 Mentoring. Can we talk?"
+    },
+    "training": {
+      "title": "Corporate Training",
+      "description": "Hands-on workshops for teams and companies: Generative AI, RAG, agentic systems, and LLM production best practices — tailored to your team's reality and stack.",
+      "features": [
+        "Content tailored to your team",
+        "Hands-on with real company use cases",
+        "From fundamentals to production deploy",
+        "Remote or on-site format"
+      ],
+      "whatsapp_message": "Hi Lucas! I'm interested in Corporate Training for my team. Can we talk?"
+    },
+    "consulting": {
+      "title": "AI Consulting",
+      "description": "Strategic and technical support for companies that want to implement AI for real: solution architecture, feasibility assessment, RAG, agents, and observability.",
+      "features": [
+        "AI adoption diagnosis and roadmap",
+        "RAG and agentic systems architecture",
+        "Assessment of existing solutions",
+        "Focus on production security and cost"
+      ],
+      "whatsapp_message": "Hi Lucas! I'd like AI Consulting for my company. Can we talk?"
+    },
+    "development": {
+      "title": "Custom Development",
+      "description": "End-to-end AI MVPs and solutions: from data ingestion to deployment — intelligent assistants, agent-powered automations, and LLM integrations.",
+      "features": [
+        "AI MVPs ready for validation",
+        "Assistants and chatbots with RAG",
+        "Autonomous agent automations",
+        "Integration with your current systems"
+      ],
+      "whatsapp_message": "Hi Lucas! I have an AI project and would like a Custom Development quote. Can we talk?"
+    }
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's build something together?",
+    "subtitle": "Message me on WhatsApp and let's talk about mentoring, training for your team, or your next AI project.",
+    "cta_whatsapp": "Chat on WhatsApp",
+    "cta_linkedin": "Connect on LinkedIn",
+    "whatsapp_message": "Hi Lucas! I saw your portfolio and would like to talk.",
+    "availability": "I usually reply within 24h"
   },
   "about": {
     "title": "About",
@@ -46,6 +111,9 @@
   },
   "footer": {
     "built_with": "Built with Next.js & Tailwind CSS",
-    "rights": "All rights reserved"
+    "rights": "All rights reserved",
+    "nav_title": "Navigation",
+    "contact_title": "Contact",
+    "tagline": "AI engineering, mentoring, and training."
   }
 }

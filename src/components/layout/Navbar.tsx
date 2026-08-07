@@ -4,8 +4,11 @@ import { useState, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { usePathname, useRouter, Link } from '@/i18n/routing';
 import { Menu, X } from 'lucide-react';
+import { WhatsAppIcon } from '@/components/ui/BrandIcons';
+import { whatsappUrl } from '@/data/site';
 
 const navLinks = [
+  { key: 'services' as const, href: '/services' },
   { key: 'projects' as const, href: '/projects' },
   { key: 'about' as const, href: '/about' },
   { key: 'certifications' as const, href: '/certifications' },
@@ -15,6 +18,7 @@ const navLinks = [
 
 export default function Navbar() {
   const t = useTranslations('nav');
+  const tContact = useTranslations('contact');
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
@@ -70,6 +74,17 @@ export default function Navbar() {
           >
             {locale === 'en' ? 'PT-BR' : 'EN'}
           </button>
+
+          {/* Contact CTA */}
+          <a
+            href={whatsappUrl(tContact('whatsapp_message'))}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-2 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-gradient-accent text-white text-sm font-semibold shadow-[0_6px_18px_-8px_rgba(99,91,232,0.6)] hover:shadow-[0_8px_22px_-6px_rgba(99,91,232,0.75)] hover:-translate-y-0.5 transition-all duration-200"
+          >
+            <WhatsAppIcon size={13} />
+            {t('contact')}
+          </a>
         </div>
 
         {/* Mobile: locale + hamburger */}
@@ -104,6 +119,16 @@ export default function Navbar() {
                 {t(key)}
               </Link>
             ))}
+            <a
+              href={whatsappUrl(tContact('whatsapp_message'))}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMenuOpen(false)}
+              className="mt-1 mb-2 inline-flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg bg-gradient-accent text-white text-sm font-semibold"
+            >
+              <WhatsAppIcon size={14} />
+              {t('contact')}
+            </a>
           </div>
         </div>
       )}

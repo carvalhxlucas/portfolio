@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Globe, ChevronRight, ArrowUpRight } from 'lucide-react';
-import { GitHubIcon, LinkedInIcon } from '@/components/ui/BrandIcons';
+import { Globe, GraduationCap, ChevronRight, ArrowUpRight } from 'lucide-react';
+import { GitHubIcon, LinkedInIcon, WhatsAppIcon } from '@/components/ui/BrandIcons';
+import { whatsappUrl, GITHUB_URL, LINKEDIN_URL } from '@/data/site';
 
 export const metadata: Metadata = {
   title: 'Lucas Carvalho — Links',
@@ -17,14 +18,26 @@ const links = [
     internal: true,
   },
   {
+    label: 'Mentorias & Serviços',
+    href: '/services',
+    icon: GraduationCap,
+    internal: true,
+  },
+  {
+    label: 'WhatsApp',
+    href: whatsappUrl('Olá Lucas! Vi seus links e gostaria de conversar.'),
+    icon: WhatsAppIcon,
+    internal: false,
+  },
+  {
     label: 'GitHub',
-    href: 'https://github.com/carvalhxlucas',
+    href: GITHUB_URL,
     icon: GitHubIcon,
     internal: false,
   },
   {
     label: 'LinkedIn',
-    href: 'https://linkedin.com/in/carvalhxlucas',
+    href: LINKEDIN_URL,
     icon: LinkedInIcon,
     internal: false,
   },

@@ -6,6 +6,7 @@ import { Link } from '@/i18n/routing';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import { GitHubIcon, LinkedInIcon } from '@/components/ui/BrandIcons';
+import { GITHUB_URL, LINKEDIN_URL } from '@/data/site';
 
 function fadeUp(delay: number) {
   return {
@@ -76,24 +77,24 @@ export default function Hero() {
             className="flex flex-wrap items-center justify-center gap-3 mt-2"
           >
             <Link
-              href="/projects"
+              href="/services"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-accent text-white font-semibold text-sm shadow-[0_8px_24px_-8px_rgba(99,91,232,0.55)] hover:shadow-[0_10px_28px_-6px_rgba(99,91,232,0.7)] hover:-translate-y-0.5 transition-all duration-200"
             >
-              {t('cta_projects')}
+              {t('cta_services')}
               <ArrowRight size={16} />
             </Link>
             <Link
-              href="/about"
+              href="/projects"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl glass border border-white/10 hover:border-violet-400/25 text-white font-semibold text-sm transition-all duration-200"
             >
-              {t('cta_about')}
+              {t('cta_projects')}
             </Link>
           </motion.div>
 
           {/* Social links */}
           <motion.div {...fadeUp(0.5)} className="flex items-center gap-4 mt-1">
             <a
-              href="https://github.com/carvalhxlucas"
+              href={GITHUB_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-slate-500 hover:text-white transition-colors text-sm"
@@ -103,7 +104,7 @@ export default function Hero() {
             </a>
             <span className="text-slate-700">·</span>
             <a
-              href="https://linkedin.com/in/carvalhxlucas"
+              href={LINKEDIN_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-slate-500 hover:text-white transition-colors text-sm"
