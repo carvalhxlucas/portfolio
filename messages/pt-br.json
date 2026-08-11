@@ -1,6 +1,6 @@
 {
   "nav": {
-    "services": "Serviços",
+    "cases": "Cases",
     "projects": "Projetos",
     "about": "Sobre",
     "certifications": "Certificações",
@@ -12,9 +12,20 @@
     "role": "Engenheiro de IA Sênior",
     "bio": "Construindo sistemas agênticos autônomos, pipelines RAG escaláveis e orquestração de LLMs na interseção de IA Generativa e Cloud Architecture.",
     "cta_projects": "Ver Projetos",
-    "cta_services": "Mentorias & Serviços",
+    "cta_cases": "Ver Cases",
     "cta_about": "Sobre mim",
     "featured": "Projetos em Destaque"
+  },
+  "cases": {
+    "eyebrow": "Cases",
+    "title": "Cases de Clientes",
+    "subtitle": "Projetos reais entregues para clientes — o contexto, o que a solução faz e como foi estruturada.",
+    "view_case": "Ver case completo",
+    "back": "Voltar para cases",
+    "overview": "Sobre o projeto",
+    "what_it_does": "O que faz",
+    "architecture": "Como foi estruturado",
+    "results": "Resultados"
   },
   "projects": {
     "eyebrow": "Portfólio",
@@ -22,63 +33,10 @@
     "subtitle": "Uma seleção de sistemas e ferramentas que construí.",
     "view_code": "Ver no GitHub"
   },
-  "services": {
-    "eyebrow": "Serviços",
-    "title": "Como posso te ajudar",
-    "subtitle": "Mentorias, treinamentos e consultoria para acelerar você ou seu time no mundo da IA — do primeiro pipeline RAG a sistemas multi-agente em produção.",
-    "home_title": "Mentorias & Serviços",
-    "home_link": "Ver todos os serviços",
-    "home_card_link": "Saiba mais",
-    "cta": "Falar no WhatsApp",
-    "mentoring": {
-      "title": "Mentoria Individual",
-      "description": "Sessões 1:1 para acelerar sua carreira em Engenharia de IA — com plano de estudo, revisão de projetos e direcionamento técnico de quem constrói IA em produção todos os dias.",
-      "features": [
-        "Plano de evolução personalizado",
-        "Revisão de código e projetos reais",
-        "Preparação para vagas de AI Engineer",
-        "Acompanhamento contínuo entre sessões"
-      ],
-      "whatsapp_message": "Olá Lucas! Vi seu portfolio e tenho interesse na Mentoria Individual. Podemos conversar?"
-    },
-    "training": {
-      "title": "Treinamentos Corporativos",
-      "description": "Workshops práticos para times e empresas: IA Generativa, RAG, sistemas agênticos e boas práticas de LLMs em produção — adaptados à realidade e à stack do seu time.",
-      "features": [
-        "Conteúdo sob medida para o seu time",
-        "Hands-on com casos reais da empresa",
-        "Do fundamento ao deploy em produção",
-        "Formato remoto ou presencial"
-      ],
-      "whatsapp_message": "Olá Lucas! Tenho interesse em um Treinamento Corporativo para meu time. Podemos conversar?"
-    },
-    "consulting": {
-      "title": "Consultoria em IA",
-      "description": "Apoio estratégico e técnico para empresas que querem implementar IA de verdade: arquitetura de soluções, avaliação de viabilidade, RAG, agentes e observabilidade.",
-      "features": [
-        "Diagnóstico e roadmap de adoção de IA",
-        "Arquitetura de RAG e sistemas agênticos",
-        "Avaliação e melhoria de soluções existentes",
-        "Foco em segurança e custo em produção"
-      ],
-      "whatsapp_message": "Olá Lucas! Gostaria de uma Consultoria em IA para minha empresa. Podemos conversar?"
-    },
-    "development": {
-      "title": "Desenvolvimento Sob Demanda",
-      "description": "Desenvolvimento de MVPs e soluções de IA de ponta a ponta: da ingestão de dados ao deploy — assistentes inteligentes, automações com agentes e integrações com LLMs.",
-      "features": [
-        "MVPs de IA prontos para validação",
-        "Assistentes e chatbots com RAG",
-        "Automações com agentes autônomos",
-        "Integração com seus sistemas atuais"
-      ],
-      "whatsapp_message": "Olá Lucas! Tenho um projeto de IA e gostaria de um orçamento de Desenvolvimento Sob Demanda. Podemos conversar?"
-    }
-  },
   "contact": {
     "eyebrow": "Contato",
     "title": "Vamos construir algo juntos?",
-    "subtitle": "Me chama no WhatsApp e vamos conversar sobre mentoria, treinamento para o seu time ou o seu próximo projeto de IA.",
+    "subtitle": "Me chama no WhatsApp e vamos conversar sobre o seu próximo projeto de IA.",
     "cta_whatsapp": "Chamar no WhatsApp",
     "cta_linkedin": "Conectar no LinkedIn",
     "whatsapp_message": "Olá Lucas! Vi seu portfolio e gostaria de conversar.",
@@ -114,6 +72,6 @@
     "rights": "Todos os direitos reservados",
     "nav_title": "Navegação",
     "contact_title": "Contato",
-    "tagline": "Engenharia de IA, mentorias e treinamentos."
+    "tagline": "Engenharia de IA e sistemas agênticos em produção."
   }
 }

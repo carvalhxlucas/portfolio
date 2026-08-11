@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Globe, GraduationCap, ChevronRight, ArrowUpRight } from 'lucide-react';
+import { Globe, Briefcase, ChevronRight, ArrowUpRight } from 'lucide-react';
 import { GitHubIcon, LinkedInIcon, WhatsAppIcon } from '@/components/ui/BrandIcons';
 import { whatsappUrl, GITHUB_URL, LINKEDIN_URL } from '@/data/site';
 
@@ -18,9 +18,9 @@ const links = [
     internal: true,
   },
   {
-    label: 'Mentorias & Serviços',
-    href: '/services',
-    icon: GraduationCap,
+    label: 'Cases de Clientes',
+    href: '/cases',
+    icon: Briefcase,
     internal: true,
   },
   {

@@ -8,7 +8,7 @@ import { WhatsAppIcon } from '@/components/ui/BrandIcons';
 import { whatsappUrl } from '@/data/site';
 
 const navLinks = [
-  { key: 'services' as const, href: '/services' },
+  { key: 'cases' as const, href: '/cases' },
   { key: 'projects' as const, href: '/projects' },
   { key: 'about' as const, href: '/about' },
   { key: 'certifications' as const, href: '/certifications' },

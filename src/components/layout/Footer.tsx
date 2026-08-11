@@ -4,7 +4,7 @@ import { GitHubIcon, LinkedInIcon, WhatsAppIcon } from '@/components/ui/BrandIco
 import { whatsappUrl, GITHUB_URL, LINKEDIN_URL } from '@/data/site';
 
 const footerLinks = [
-  { key: 'services' as const, href: '/services' },
+  { key: 'cases' as const, href: '/cases' },
   { key: 'projects' as const, href: '/projects' },
   { key: 'about' as const, href: '/about' },
   { key: 'certifications' as const, href: '/certifications' },
