@@ -16,11 +16,11 @@ export const experience: ExperienceItem[] = [
     period: '04/2026 – Present',
     highlights: {
       en: [
-        'Promoted to Senior AI Engineer, leading the design of agentic AI systems focused on autonomous, multi-step reasoning and task execution.',
+        'Leading the design of agentic AI systems focused on autonomous, multi-step reasoning and task execution.',
         'Deepening expertise in Agentic AI architectures, building on production RAG and LLM orchestration experience to ship reliable, hallucination-resistant systems.',
       ],
       'pt-br': [
-        'Promovido a Engenheiro de IA Sênior, liderando o design de sistemas de IA agêntica focados em raciocínio autônomo multi-etapas e execução de tarefas.',
+        'Lidero o design de sistemas de IA agêntica focados em raciocínio autônomo multi-etapas e execução de tarefas.',
         'Aprofundando expertise em arquiteturas de IA Agêntica, construindo sobre a experiência com RAG e orquestração de LLMs em produção para entregar sistemas confiáveis e resistentes a alucinações.',
       ],
     },
