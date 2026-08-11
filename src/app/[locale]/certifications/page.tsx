@@ -16,14 +16,15 @@ export default async function CertificationsPage({
 
 function CertificationsContent() {
   const t = useTranslations('certifications');
+  const sorted = [...certifications].sort((a, b) => b.date.localeCompare(a.date));
 
   return (
-    <div className="max-w-4xl mx-auto px-6 pt-28 pb-24">
+    <div className="max-w-5xl mx-auto px-6 pt-28 pb-24">
       <PageHeader eyebrow={t('eyebrow')} title={t('title')} subtitle={t('subtitle')} />
 
-      <div className="flex flex-col gap-4">
-        {certifications.map((cert, i) => (
-          <CertificationCard key={cert.name} cert={cert} index={i} />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {sorted.map((cert, i) => (
+          <CertificationCard key={`${cert.name}-${cert.issuer}`} cert={cert} index={i} />
         ))}
       </div>
     </div>

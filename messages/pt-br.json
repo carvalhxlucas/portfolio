@@ -4,7 +4,6 @@
     "projects": "Projetos",
     "about": "Experiência",
     "certifications": "Certificações",
-    "courses": "Cursos",
     "articles": "Artigos",
     "contact": "Contato"
   },
@@ -34,13 +33,7 @@
     "view_code": "Ver no GitHub"
   },
   "contact": {
-    "eyebrow": "Contato",
-    "title": "Vamos construir algo juntos?",
-    "subtitle": "Me chama no WhatsApp e vamos conversar sobre o seu próximo projeto de IA.",
-    "cta_whatsapp": "Chamar no WhatsApp",
-    "cta_linkedin": "Conectar no LinkedIn",
-    "whatsapp_message": "Olá Lucas! Vi seu portfolio e gostaria de conversar.",
-    "availability": "Respondo geralmente em até 24h"
+    "whatsapp_message": "Olá Lucas! Vi seu portfolio e gostaria de conversar."
   },
   "about": {
     "title": "Sobre",
@@ -51,14 +44,8 @@
   "certifications": {
     "eyebrow": "Credenciais",
     "title": "Certificações",
-    "subtitle": "Credenciais e badges profissionais.",
+    "subtitle": "Certificações, cursos e badges profissionais em ML, IA e engenharia.",
     "view_credential": "Ver credencial"
-  },
-  "courses": {
-    "eyebrow": "Aprendizado",
-    "title": "Cursos",
-    "subtitle": "Aprendizado contínuo em ML, IA e engenharia.",
-    "view_certificate": "Ver certificado"
   },
   "articles": {
     "eyebrow": "Escrita",

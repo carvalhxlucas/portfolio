@@ -2,9 +2,9 @@ export interface Certification {
   name: string;
   issuer: string;
   date: string;
-  badgeUrl: string;
   credentialUrl: string;
   description: string;
+  badgeUrl?: string; // Badge oficial (Credly etc.) — sem ele o card usa um ícone padrão
 }
 
 export const certifications: Certification[] = [
@@ -53,5 +53,103 @@ export const certifications: Certification[] = [
     badgeUrl: 'https://upload.wikimedia.org/wikipedia/en/d/d0/The_Hong_Kong_University_of_Science_and_Technology_Logo.svg',
     credentialUrl: 'https://www.coursera.org/account/accomplishments/specialization/2YHYF38JNKUF',
     description: 'Core software engineering principles, design patterns, and development practices.',
+  },
+  {
+    name: 'Advanced Learning Algorithms',
+    issuer: 'Stanford University',
+    date: '2024-01-01',
+    credentialUrl: '/courses/certificates/advance-learning-algorithms-stanford.pdf',
+    description: 'Neural networks, decision trees and ensemble methods.',
+  },
+  {
+    name: 'Deep Learning and Neural Networks',
+    issuer: 'IBM',
+    date: '2024-01-01',
+    credentialUrl: '/courses/certificates/deep-learning-and-neural-networks.pdf',
+    description: 'Fundamentals of deep learning and neural network architectures.',
+  },
+  {
+    name: 'Foundations of Cybersecurity',
+    issuer: 'Google',
+    date: '2024-01-01',
+    credentialUrl: '/courses/certificates/foundations-of-cybersecurity-google.pdf',
+    description: 'Introduction to cybersecurity concepts and practices.',
+  },
+  {
+    name: 'Keras and TensorFlow',
+    issuer: 'IBM',
+    date: '2024-01-01',
+    credentialUrl: '/courses/certificates/keras-and-tensorflow-ibm.pdf',
+    description: 'Building and training models with Keras and TensorFlow.',
+  },
+  {
+    name: 'Neural Networks and PyTorch',
+    issuer: 'IBM',
+    date: '2024-01-01',
+    credentialUrl: '/courses/certificates/neural-networks-and-pytorch.pdf',
+    description: 'Neural networks development with PyTorch framework.',
+  },
+  {
+    name: 'Programming in Python',
+    issuer: 'Meta',
+    date: '2024-01-01',
+    credentialUrl: '/courses/certificates/programming-in-python-meta.pdf',
+    description: 'Python programming fundamentals and best practices.',
+  },
+  {
+    name: 'Prompt Engineering Basics',
+    issuer: 'IBM',
+    date: '2024-01-01',
+    credentialUrl: '/courses/certificates/prompt-engineering-basics-ibm.pdf',
+    description: 'Introduction to prompt engineering for LLMs.',
+  },
+  {
+    name: 'Prompt Engineering',
+    issuer: 'Rocketseat',
+    date: '2024-01-01',
+    credentialUrl: '/courses/certificates/prompt-engineering-rocketseat.pdf',
+    description: 'Prompt engineering techniques and applications.',
+  },
+  {
+    name: 'Regression and Classification',
+    issuer: 'Stanford University',
+    date: '2024-01-01',
+    credentialUrl: '/courses/certificates/regression-and-classification-stanford.pdf',
+    description: 'Supervised learning, regression and classification algorithms.',
+  },
+  {
+    name: 'Security Operations Center',
+    issuer: 'IBM',
+    date: '2024-01-01',
+    credentialUrl: '/courses/certificates/security-operations-center-ibm.pdf',
+    description: 'SOC fundamentals and security monitoring.',
+  },
+  {
+    name: 'Unsupervised Learning',
+    issuer: 'Stanford University',
+    date: '2024-01-01',
+    credentialUrl: '/courses/certificates/unsupervised-learning-stanford.pdf',
+    description: 'Clustering, dimensionality reduction and unsupervised methods.',
+  },
+  {
+    name: 'Claude Code in Action',
+    issuer: 'Anthropic',
+    date: '2026-03-24',
+    credentialUrl: 'https://verify.skilljar.com/c/gsrzennawisr',
+    description: 'AI coding assistant architecture, tool use systems, context management and GitHub integration.',
+  },
+  {
+    name: 'Introduction to Model Context Protocol',
+    issuer: 'Anthropic',
+    date: '2026-03-25',
+    credentialUrl: 'https://verify.skilljar.com/c/ss556kniyr4z',
+    description: 'Building MCP servers and clients from scratch, covering tools, resources and prompts for connecting Claude with external services.',
+  },
+  {
+    name: 'Model Context Protocol: Advanced Topics',
+    issuer: 'Anthropic',
+    date: '2026-03-26',
+    credentialUrl: 'https://verify.skilljar.com/c/6c328ikixbg2',
+    description: 'Advanced MCP development covering server-client communication, transport mechanisms, sampling, notifications and production deployment.',
   },
 ];

@@ -4,7 +4,6 @@
     "projects": "Projects",
     "about": "Experience",
     "certifications": "Certifications",
-    "courses": "Courses",
     "articles": "Articles",
     "contact": "Contact"
   },
@@ -34,13 +33,7 @@
     "view_code": "View on GitHub"
   },
   "contact": {
-    "eyebrow": "Contact",
-    "title": "Let's build something together?",
-    "subtitle": "Message me on WhatsApp and let's talk about your next AI project.",
-    "cta_whatsapp": "Chat on WhatsApp",
-    "cta_linkedin": "Connect on LinkedIn",
-    "whatsapp_message": "Hi Lucas! I saw your portfolio and would like to talk.",
-    "availability": "I usually reply within 24h"
+    "whatsapp_message": "Hi Lucas! I saw your portfolio and would like to talk."
   },
   "about": {
     "title": "About",
@@ -51,14 +44,8 @@
   "certifications": {
     "eyebrow": "Credentials",
     "title": "Certifications",
-    "subtitle": "Professional credentials and badges.",
+    "subtitle": "Professional certifications, courses, and badges across ML, AI, and engineering.",
     "view_credential": "View credential"
-  },
-  "courses": {
-    "eyebrow": "Learning",
-    "title": "Courses",
-    "subtitle": "Continuous learning across ML, AI, and engineering.",
-    "view_certificate": "View certificate"
   },
   "articles": {
     "eyebrow": "Writing",

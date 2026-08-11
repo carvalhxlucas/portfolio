@@ -2,7 +2,6 @@ import { useTranslations } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import Hero from '@/components/sections/Hero';
 import ProjectCard from '@/components/sections/ProjectCard';
-import ContactCTA from '@/components/sections/ContactCTA';
 import { projects } from '@/data/projects';
 import { Link } from '@/i18n/routing';
 import { ArrowRight } from 'lucide-react';
@@ -48,7 +47,6 @@ export default async function HomePage({
     <>
       <Hero />
       <FeaturedProjects />
-      <ContactCTA />
     </>
   );
 }

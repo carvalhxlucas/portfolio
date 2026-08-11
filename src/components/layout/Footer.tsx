@@ -8,7 +8,6 @@ const footerLinks = [
   { key: 'projects' as const, href: '/projects' },
   { key: 'about' as const, href: '/about' },
   { key: 'certifications' as const, href: '/certifications' },
-  { key: 'courses' as const, href: '/courses' },
   { key: 'articles' as const, href: '/articles' },
 ];
 

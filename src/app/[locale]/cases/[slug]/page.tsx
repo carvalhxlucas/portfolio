@@ -2,7 +2,6 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, Building2 } from 'lucide-react';
 import { Link, type Locale } from '@/i18n/routing';
-import ContactCTA from '@/components/sections/ContactCTA';
 import Tag from '@/components/ui/Tag';
 import { cases, getCaseBySlug, type Localized } from '@/data/cases';
 
@@ -58,8 +57,7 @@ export default async function CaseDetailPage({
   ];
 
   return (
-    <>
-      <article className="max-w-3xl mx-auto px-6 pt-28 pb-16">
+    <article className="max-w-3xl mx-auto px-6 pt-28 pb-24">
         <Link
           href="/cases"
           className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors mb-10"
@@ -103,8 +101,6 @@ export default async function CaseDetailPage({
             </section>
           ))}
         </div>
-      </article>
-      <ContactCTA />
-    </>
+    </article>
   );
 }
