@@ -77,10 +77,10 @@ export default function Hero() {
             className="flex flex-wrap items-center justify-center gap-3 mt-2"
           >
             <Link
-              href="/cases"
+              href="/about"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-accent text-white font-semibold text-sm shadow-[0_8px_24px_-8px_rgba(99,91,232,0.55)] hover:shadow-[0_10px_28px_-6px_rgba(99,91,232,0.7)] hover:-translate-y-0.5 transition-all duration-200"
             >
-              {t('cta_cases')}
+              {t('cta_experience')}
               <ArrowRight size={16} />
             </Link>
             <Link

@@ -2,7 +2,7 @@
   "nav": {
     "cases": "Cases",
     "projects": "Projetos",
-    "about": "Sobre",
+    "about": "Experiência",
     "certifications": "Certificações",
     "courses": "Cursos",
     "articles": "Artigos",
@@ -12,7 +12,7 @@
     "role": "Engenheiro de IA Sênior",
     "bio": "Construindo sistemas agênticos autônomos, pipelines RAG escaláveis e orquestração de LLMs na interseção de IA Generativa e Cloud Architecture.",
     "cta_projects": "Ver Projetos",
-    "cta_cases": "Ver Cases",
+    "cta_experience": "Experiência",
     "cta_about": "Sobre mim",
     "featured": "Projetos em Destaque"
   },

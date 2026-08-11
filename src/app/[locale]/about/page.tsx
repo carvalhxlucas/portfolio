@@ -1,14 +1,16 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { MapPin, Calendar } from 'lucide-react';
+import { type Locale } from '@/i18n/routing';
 import PageHeader from '@/components/ui/PageHeader';
 import GlassCard from '@/components/ui/GlassCard';
 import { experience } from '@/data/experience';
 
 export default function AboutPage() {
   const t = useTranslations('about');
+  const locale = useLocale() as Locale;
 
   return (
     <div className="max-w-4xl mx-auto px-6 pt-28 pb-24">
@@ -78,7 +80,7 @@ export default function AboutPage() {
                       </div>
                     </div>
                     <ul className="flex flex-col gap-2.5">
-                      {item.highlights.map((highlight, j) => (
+                      {item.highlights[locale].map((highlight, j) => (
                         <li key={j} className="text-slate-400 text-sm leading-relaxed flex gap-3">
                           <span className="mt-[7px] w-1 h-1 rounded-full bg-violet-400/70 shrink-0" />
                           {highlight}

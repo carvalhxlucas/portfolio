@@ -2,7 +2,7 @@
   "nav": {
     "cases": "Cases",
     "projects": "Projects",
-    "about": "About",
+    "about": "Experience",
     "certifications": "Certifications",
     "courses": "Courses",
     "articles": "Articles",
@@ -12,7 +12,7 @@
     "role": "Senior AI Engineer",
     "bio": "Building autonomous agentic systems, scalable RAG pipelines, and LLM orchestration at the intersection of Generative AI and Cloud Architecture.",
     "cta_projects": "View Projects",
-    "cta_cases": "View Cases",
+    "cta_experience": "Experience",
     "cta_about": "About me",
     "featured": "Featured Projects"
   },
